@@ -1,0 +1,92 @@
+drop DATABASE if exists games_db;
+
+CREATE DATABASE IF NOT EXISTS games_DB;
+
+USE games_DB;
+
+
+CREATE TABLE Game (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  title VARCHAR(255) NOT NULL,
+  genre VARCHAR(255) NOT NULL,
+  release_year INT NOT NULL,
+  developer VARCHAR(255) NOT NULL,
+  publisher VARCHAR(255) NOT NULL,
+  price DOUBLE(10,2),
+  rate int
+);
+
+CREATE TABLE Platform (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  manufacturer VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Game_Platform (
+  game_id INT NOT NULL,
+  platform_id INT NOT NULL,
+  PRIMARY KEY (game_id, platform_id),
+  FOREIGN KEY (game_id) REFERENCES Game(id),
+  FOREIGN KEY (platform_id) REFERENCES Platform(id)
+);
+
+
+
+-- Game Table Data
+INSERT INTO Game (title, genre, release_year, developer, publisher, price, rate)
+VALUES
+('Red Dead Redemption 2', 'Action-adventure', 2018, 'Rockstar Studios', 'Rockstar Games', 59.99, 4),
+('The Witcher 3: Wild Hunt', 'Action role-playing', 2015, 'CD Projekt Red', 'CD Projekt', 29.99, 4),
+('Grand Theft Auto V', 'Action-adventure', 2013, 'Rockstar North', 'Rockstar Games', 29.99, 4.5),
+('Call of Duty: Modern Warfare', 'First-person shooter', 2019, 'Infinity Ward', 'Activision', 59.99, 3),
+('Fortnite', 'Battle royale', 2017, 'Epic Games', 'Epic Games', 0, 3),
+('Minecraft', 'Sandbox', 2011, 'Mojang Studios', 'Mojang Studios', 26.95, 4),
+('Apex Legends', 'Battle royale', 2019, 'Respawn Entertainment', 'Electronic Arts', 0, 4),
+('Overwatch', 'First-person shooter', 2016, 'Blizzard Entertainment', 'Blizzard Entertainment', 19.99, 4),
+('FIFA 21', 'Sports', 2020, 'EA Vancouver', 'Electronic Arts', 59.99, 3.5),
+('NBA 2K21', 'Sports', 2020, 'Visual Concepts', '2K Sports', 59.99, 3),
+('Assassin’s Creed Valhalla', 'Action role-playing', 2020, 'Ubisoft Montreal', 'Ubisoft', 59.99, 4),
+('Horizon Zero Dawn', 'Action role-playing', 2017, 'Guerrilla Games', 'Sony Interactive Entertainment', 19.99, 4),
+('League of Legends', 'MOBA', 2009, 'Riot Games', 'Riot Games', 0, 4.5),
+('Counter-Strike: Global Offensive', 'First-person shooter', 2012, 'Valve Corporation', 'Valve Corporation', 0, 4),
+('The Elder Scrolls V: Skyrim', 'Action role-playing', 2011, 'Bethesda Game Studios', 'Bethesda Softworks', 39.99, 4);
+
+
+-- Platform Table Data
+INSERT INTO Platform (name, manufacturer)
+VALUES
+('PlayStation 5', 'Sony'),
+('Xbox Series X', 'Microsoft'),
+('Nintendo Switch', 'Nintendo'),
+('PlayStation 4', 'Sony'),
+('Xbox One', 'Microsoft'),
+('Nintendo 3DS', 'Nintendo'),
+('PC', 'Various'),
+('PlayStation 3', 'Sony'),
+('Xbox 360', 'Microsoft'),
+('Nintendo Wii U', 'Nintendo'),
+('PlayStation 2', 'Sony'),
+('Xbox', 'Microsoft'),
+('Nintendo GameCube', 'Nintendo'),
+('PlayStation', 'Sony'),
+('Nintendo 64', 'Nintendo');
+
+
+-- Game_Platform Table Data
+INSERT INTO Game_Platform (game_id, platform_id)
+VALUES
+(1, 1),
+(1, 2),
+(1, 4),
+(2, 1),
+(2, 2),
+(2, 7),
+(3, 1),
+(3, 2),
+(3, 5),
+(4, 1),
+(4, 2),
+(4, 7),
+(5, 1),
+(5, 2),
+(6, 3);
