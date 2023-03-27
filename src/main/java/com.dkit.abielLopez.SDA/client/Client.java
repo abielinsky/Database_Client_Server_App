@@ -1,7 +1,9 @@
 package com.dkit.abielLopez.SDA.client;
 
+import com.dkit.abielLopez.SDA.client.clientconstants.ClientPrintMenuOptions;
 import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
+import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;
 
 
 import java.io.*;
@@ -9,9 +11,11 @@ import java.net.InetAddress;
 import java.net.Socket;
 import java.util.Scanner;
 
-import static com.dkit.abielLopez.SDA.core.serviceDetails.SERVER_PORT;
+import static com.dkit.abielLopez.SDA.core.ServiceDetails.SERVER_PORT;
 
 public class Client {
+
+    private static final ValidationForEnumMenus validateClientMenuOptionsEnum = new ValidationForEnumMenus();
 
 
     public static void main(String[] args) {
@@ -31,13 +35,14 @@ public class Client {
             //An example of the Decorator design pattern
             Scanner input = new Scanner(new InputStreamReader(in));
 
-            ClientMainMenuOptions selectedOption = ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU;
+            ProtocolMenuOptions.ClientMainMenuOptions
+                    selectedOption = ProtocolMenuOptions.ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU;
 
             boolean quit = false;
 
             start();
 
-            while (selectedOption != ClientMainMenuOptions.QUIT_CLIENT_MENU) {
+            while (selectedOption != ProtocolMenuOptions.ClientMainMenuOptions.QUIT_CLIENT_MENU) {
                 selectedOption = validateClientMenuOptionsEnum.validateClientMenuOptionsEnum();
 
                 switch (selectedOption) {
@@ -48,38 +53,38 @@ public class Client {
                     case QUIT_CLIENT_MENU:
                         quit = true;
                         break;
-
-                    case ADD_GAME:
-                        // Code to add a new game to the database
-                        break;
-
-                    case DELETE_GAME:
-                        // Code to delete a game from the database
-                        break;
-
-                    case UPDATE_GAME:
-                        // Code to update a game in the database
-                        break;
-
-                    case VIEW_GAMES:
-                        // Code to view all games in the database
-                        break;
-
-                    case ADD_PLATFORM:
-                        // Code to add a new platform to the database
-                        break;
-
-                    case DELETE_PLATFORM:
-                        // Code to delete a platform from the database
-                        break;
-
-                    case UPDATE_PLATFORM:
-                        // Code to update a platform in the database
-                        break;
-
-                    case VIEW_PLATFORMS:
-                        // Code to view all platforms in the database
-                        break;
+//
+//                    case ADD_GAME:
+//                        // Code to add a new game to the database
+//                        break;
+//
+//                    case DELETE_GAME:
+//                        // Code to delete a game from the database
+//                        break;
+//
+//                    case UPDATE_GAME:
+//                        // Code to update a game in the database
+//                        break;
+//
+//                    case VIEW_GAMES:
+//                        // Code to view all games in the database
+//                        break;
+//
+//                    case ADD_PLATFORM:
+//                        // Code to add a new platform to the database
+//                        break;
+//
+//                    case DELETE_PLATFORM:
+//                        // Code to delete a platform from the database
+//                        break;
+//
+//                    case UPDATE_PLATFORM:
+//                        // Code to update a platform in the database
+//                        break;
+//
+//                    case VIEW_PLATFORMS:
+//                        // Code to view all platforms in the database
+//                        break;
 
                     default:
                         System.out.println("Invalid option selected.");
