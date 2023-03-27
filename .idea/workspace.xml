@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="Coding client side and code for connections. and menu for the game table options.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/GamesStoreMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/GamesStoreManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Store.java" afterDir="false" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="Coding client side">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientconstants/ClientPrintMenuOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientconstants/ClientPrintMenuOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/Packet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/ProtocolMenuOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/ProtocolMenuOptions.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +47,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_CA_06/Database_Client_Server_App",
+    "last_opened_file_path": "F:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_SamplesCA06/oop_ca6_nebianilatici-master",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -140,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679879165281</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Coding client side">
+      <created>1679891823253</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1679891823253</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -160,6 +157,7 @@
     <MESSAGE value="some changes to the sql database." />
     <MESSAGE value="Coding client side and code for connections." />
     <MESSAGE value="Coding client side and code for connections. and menu for the game table options." />
-    <option name="LAST_COMMIT_MESSAGE" value="Coding client side and code for connections. and menu for the game table options." />
+    <MESSAGE value="Coding client side" />
+    <option name="LAST_COMMIT_MESSAGE" value="Coding client side" />
   </component>
 </project>
