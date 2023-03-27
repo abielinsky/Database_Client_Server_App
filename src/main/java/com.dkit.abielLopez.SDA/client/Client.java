@@ -1,8 +1,11 @@
 package com.dkit.abielLopez.SDA.client;
 
 import com.dkit.abielLopez.SDA.client.clientconstants.ClientPrintMenuOptions;
+import com.dkit.abielLopez.SDA.client.clientmenus.GamesStoreMenu;
+import com.dkit.abielLopez.SDA.client.clientmenus.Menu;
 import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
+import com.dkit.abielLopez.SDA.dto.GamesStoreManager;
 import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;
 
 
@@ -39,6 +42,10 @@ public class Client {
                     selectedOption = ProtocolMenuOptions.ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU;
 
             boolean quit = false;
+            Menu gamesStoreMenu = new GamesStoreMenu(input, output);
+
+            GamesStoreManager gamesStoreManager = ((GamesStoreMenu) gamesStoreMenu).initializeGamesStoreManager();
+
 
             start();
 
@@ -53,6 +60,14 @@ public class Client {
                     case QUIT_CLIENT_MENU:
                         quit = true;
                         break;
+
+
+//                    case DISPLAY_STORES_OF_GAMES:
+//                        gamesStoreManager.displayListOfStores();
+//                        // Code to add a new game to the database
+//                        break;
+
+
 //
 //                    case ADD_GAME:
 //                        // Code to add a new game to the database
