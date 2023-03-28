@@ -80,6 +80,10 @@ public class Packet {
         return payload;
     }
 
+    public Enum getMessageType()
+    {
+        return messageType;
+    }
 
 
     public void setMessageType(Enum messageType)

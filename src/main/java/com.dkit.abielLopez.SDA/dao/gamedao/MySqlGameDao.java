@@ -64,6 +64,15 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
     }
 
     @Override
+    public String findAllGamesJson() throws DaoException {
+        List<Game> trains = findAllGames();
+
+        String jsonStringTrains = gsonParser.toJson(trains);
+
+        return jsonStringTrains;
+    }
+
+    @Override
     public String findAllTrainsJson() throws DaoException
     {
         List<Game> trains = findAllGames();
