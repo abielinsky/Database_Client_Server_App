@@ -44,4 +44,29 @@ public class ValidationForEnumMenus {
 
 
 
+
+    public ProtocolMenuOptions.StoreMenuOptions validateStoreMenuOptions()
+    {
+        ProtocolMenuOptions.StoreMenuOptions selectedOption = null;
+        boolean validFleetMenuOption = false;
+        while (!validFleetMenuOption)
+        {
+            try
+            {
+                printMenuOptionAction();
+                selectedOption = ProtocolMenuOptions.StoreMenuOptions.values()[Integer.parseInt(keyboard.nextLine().trim())];
+                validFleetMenuOption = true;
+            }
+            catch (InputMismatchException | NumberFormatException | ArrayIndexOutOfBoundsException e)
+            {
+                System.out.print(Colours.RED + "Invalid input. Number inputted must be between 0 - 9.\n" + Colours.RESET);
+            }
+
+        }
+
+        return selectedOption;
+    }
+
+
+
 }

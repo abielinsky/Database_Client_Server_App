@@ -1,6 +1,8 @@
 package com.dkit.abielLopez.SDA.client.clientmenus;
 
+import com.dkit.abielLopez.SDA.client.clientconstants.DisplayHeadingsForEntities;
 import com.dkit.abielLopez.SDA.core.Packet;
+import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;
 import com.fatboyindustrial.gsonjavatime.Converters;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -30,7 +32,19 @@ public abstract class Menu
     }
 
 
+    public ValidationForEnumMenus getValidateMenuOptionsEnum()
+    {
+        return validateMenuOptionsEnum;
+    }
 
+    private final ValidationForEnumMenus validateMenuOptionsEnum = new ValidationForEnumMenus();
+
+    public DisplayHeadingsForEntities getDisplayHeading()
+    {
+        return displayHeading;
+    }
+
+    private final DisplayHeadingsForEntities displayHeading = new DisplayHeadingsForEntities();
 
     public PrintWriter getOutput()
     {

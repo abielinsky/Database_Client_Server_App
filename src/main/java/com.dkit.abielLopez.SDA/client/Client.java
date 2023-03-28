@@ -1,7 +1,7 @@
 package com.dkit.abielLopez.SDA.client;
 
 import com.dkit.abielLopez.SDA.client.clientconstants.ClientPrintMenuOptions;
-import com.dkit.abielLopez.SDA.client.clientmenus.GamesStoreMenu;
+import com.dkit.abielLopez.SDA.client.clientmenus.StoreMenu;
 import com.dkit.abielLopez.SDA.client.clientmenus.Menu;
 import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
@@ -42,9 +42,9 @@ public class Client {
                     selectedOption = ProtocolMenuOptions.ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU;
 
             boolean quit = false;
-            Menu gamesStoreMenu = new GamesStoreMenu(input, output);
+            Menu gamesStoreMenu = new StoreMenu(input, output);
 
-            GamesStoreManager gamesStoreManager = ((GamesStoreMenu) gamesStoreMenu).initializeGamesStoreManager();
+            GamesStoreManager gamesStoreManager = ((StoreMenu) gamesStoreMenu).initializeGamesStoreManager();
 
 
             start();

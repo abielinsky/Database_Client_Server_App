@@ -6,6 +6,7 @@ public class ProtocolMenuOptions {
     {
         QUIT_CLIENT_MENU,
         PRINT_CLIENT_MAIN_MENU,
+        DISPLAY_LIST_OF_GAMES,
         NONE,
 
     }
@@ -16,6 +17,17 @@ public class ProtocolMenuOptions {
         DISPLAY_LIST_OF_GAMES
 
     }
+
+    public enum StoreMenuOptions
+    {
+        PRINT_STORE_MENU,
+        QUIT_STORE_MENU,
+        DISPLAY_LIST_OF_GAMES
+
+    }
+
+
+
 
 
 }
