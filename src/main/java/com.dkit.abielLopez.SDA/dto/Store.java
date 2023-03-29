@@ -4,7 +4,6 @@ public class Store
 {
 
 
-
-
-
+    public Store(int storeID, String storeName) {
+    }
 }

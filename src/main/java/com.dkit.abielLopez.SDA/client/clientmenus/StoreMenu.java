@@ -4,7 +4,7 @@ import com.dkit.abielLopez.SDA.client.clientconstants.ClientPrintMenuOptions;
 import com.dkit.abielLopez.SDA.core.Packet;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
 import com.dkit.abielLopez.SDA.dto.Game;
-import com.dkit.abielLopez.SDA.dto.GamesStoreManager;
+import com.dkit.abielLopez.SDA.dto.StoreManager;
 import com.dkit.abielLopez.SDA.dto.Store;
 import com.google.gson.reflect.TypeToken;
 
@@ -15,32 +15,31 @@ import java.util.*;
 public class StoreMenu extends Menu
 {
 
-    private GamesStoreManager gamesStoreManager;
-
-
+    private StoreManager storeManager;
     Type arrayListGames = new TypeToken<ArrayList<Game>>(){}.getType();
-
     public StoreMenu(Scanner input, PrintWriter output)
     {
         super(input, output);
     }
 
+
+
     @Override
     public void start()
     {
-        if(gamesStoreManager == null)
+        if(storeManager == null)
         {
             initializeGamesStoreManager();
         }
         ClientPrintMenuOptions.printOptionsClientGameMenu();
-        // setUpStoresMenu(); for menu stores..
+         setUpStoresMenu();
     }
 
 
 
 
 
-    private void setUpFleetMenu()
+    private void setUpStoresMenu()
     {
         ProtocolMenuOptions.StoreMenuOptions selectedOption = ProtocolMenuOptions.StoreMenuOptions.PRINT_STORE_MENU;
 
@@ -71,47 +70,11 @@ public class StoreMenu extends Menu
 
                 case DISPLAY_LIST_OF_GAMES:
                     displayListOfGames(outgoingPacket, responsePacket);
-                    break;
 
-//                case DISPLAY_LIST_OF_FLEETS:
-//                    fleetManager.displayListOfFleets();
-//                    break;
-//
-//                case DISPLAY_TREEMAP_FLEETS:
-//                    fleetManager.displayFleet();
-//                    break;
-//
-//                case DISPLAY_TRAIN_BY_TRAIN_ID:
-//                    train = searchTrain(outgoingPacket,responsePacket);
-//                    displayTrainByTrainID(train);
-//                    break;
-//
-//                case REMOVE_TRAIN:
-//                    train = searchTrain(outgoingPacket,responsePacket);
-//                    removeTrain(train, outgoingPacket,responsePacket);
-//                    break;
-//
-//                case ADD_NEW_TRAIN:
-//                    String newTrainJson = addNewTrain();
-//
-//                    if(newTrainJson != null)
-//                    {
-//                        outgoingPacket.setPayload(newTrainJson);
-//                        super.outputPacket(outgoingPacket);
-//                        super.responsePacket(responsePacket);
-//
-//                        train = getGsonParser().fromJson(responsePacket.getPayload(), Train.class);
-//                        displayNewAddedTrain(train);
-//                    }
-//
-//                    break;
-//
-//                case DISPLAY_LIST_OF_TRAINS_LESS_THAN_CAPACITY_LIMIT:
-//                    displayListOfTrainsLessThanCapacity(outgoingPacket,responsePacket);
-//                    break;
 
-//                case DISPLAY_AVERAGE_SEAT_CAPACITY_FOR_ALL_TRAINS_BELONGING_TO_A_FLEET:
-//                    displayAverageSeatCapacityForAllTrainsBelongingToAFleet(outgoingPacket,responsePacket);
+
+
+
             }
 
         }
@@ -137,29 +100,34 @@ public class StoreMenu extends Menu
     }
 
 
-    public GamesStoreManager initializeGamesStoreManager()
+    public void setGamesStoreManager(StoreManager storeManager)
     {
-        Packet getFleetPacket = new Packet(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_STORES, "");
-        Packet responseFleetPacket = new Packet(ProtocolMenuOptions.ClientMainMenuOptions.NONE, null);
+        this.storeManager = storeManager;
+    }
 
-        super.outputPacket(getFleetPacket);
-        super.responsePacket(responseFleetPacket);
+    public StoreManager initializeGamesStoreManager()
+    {
+        Packet getStorePacket = new Packet(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_STORES, "");
+        Packet responseStorePacket = new Packet(ProtocolMenuOptions.ClientMainMenuOptions.NONE, null);
 
-        Type arrayListFleetType = new TypeToken<Set<Store>>() {}.getType();
+        super.outputPacket(getStorePacket);
+        super.responsePacket(responseStorePacket);
 
-        Set<Store> stores = getGsonParser().fromJson(responseFleetPacket.getPayload(), arrayListFleetType);
+        Type arrayListStoreType = new TypeToken<Set<Store>>() {}.getType();
 
-        getFleetPacket.setMessageType(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_GAMES);
-        responseFleetPacket.setPayload("");
+        Set<Store> stores = getGsonParser().fromJson(responseStorePacket.getPayload(), arrayListStoreType);
 
-        super.outputPacket(getFleetPacket);
-        super.responsePacket(responseFleetPacket);
+        getStorePacket.setMessageType(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_GAMES);
+        responseStorePacket.setPayload("");
 
-        ArrayList<Game> games = getGsonParser().fromJson(responseFleetPacket.getPayload(), arrayListGames);
+        super.outputPacket(getStorePacket);
+        super.responsePacket(responseStorePacket);
+
+        ArrayList<Game> games = getGsonParser().fromJson(responseStorePacket.getPayload(), arrayListGames);
 
 
-        GamesStoreManager startGamesStoreManager= new GamesStoreManager(stores, games);
-        return startGamesStoreManager;
+        StoreManager startStoreManager = new StoreManager(stores, games);
+        return startStoreManager;
     }
 
 

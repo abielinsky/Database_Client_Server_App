@@ -20,6 +20,7 @@ public class Packet {
         else if(messageType instanceof ProtocolMenuOptions.StoresGamesMenuOptions)
         {
             this.messageType = messageType;
+            System.out.println("Hello");
         }
 
 //        else if(messageType instanceof StationMenuOptions)
@@ -58,7 +59,9 @@ public class Packet {
                 jo.get("messageType").toString().equals("PRINT_GAME_MAIN_MENU") ||
                 jo.get("messageType").toString().equals("QUIT_STORE_MENU") ||
                 jo.get("messageType").toString().equals("QUIT_GAME_MENU") ||
-                jo.get("messageType").toString().equals("NONE")
+                jo.get("messageType").toString().equals("NONE")||
+
+                        jo.get("messageType").toString().equals("DISPLAY_LIST_OF_STORES")
 
         )
         {

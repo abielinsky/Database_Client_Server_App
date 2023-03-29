@@ -1,13 +1,15 @@
 package com.dkit.abielLopez.SDA.dao;
 
+import com.dkit.abielLopez.SDA.dto.Store;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Set;
 
 
-public class MySqlDao
+public abstract class MySqlDao
 {
 
     public Connection getConnection() throws DaoException
@@ -52,6 +54,12 @@ public class MySqlDao
         }
 
     }
+
+
+
+    public abstract Set<Store> findAllStores() throws DaoException;
+
+
 
 
 }

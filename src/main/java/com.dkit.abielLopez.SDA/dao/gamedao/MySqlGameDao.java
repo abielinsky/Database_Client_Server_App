@@ -2,11 +2,16 @@ package com.dkit.abielLopez.SDA.dao.gamedao;
 
 import com.dkit.abielLopez.SDA.dao.MySqlDao;
 import com.dkit.abielLopez.SDA.dto.Game;
+import com.dkit.abielLopez.SDA.dto.Store;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 
 public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
@@ -65,27 +70,22 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
 
     @Override
     public String findAllGamesJson() throws DaoException {
-        List<Game> trains = findAllGames();
 
-        String jsonStringTrains = gsonParser.toJson(trains);
+        List<Game> games = findAllGames();
 
-        return jsonStringTrains;
+        String jsonStringGames = gsonParser.toJson(games);
+
+        return jsonStringGames;
     }
 
     @Override
-    public String findAllTrainsJson() throws DaoException
-    {
-        List<Game> trains = findAllGames();
-
-        String jsonStringTrains = gsonParser.toJson(trains);
-
-        return jsonStringTrains;
+    public List<Game> findAllGamesInStore(int storeIDToBeFound) throws DaoException {
+        return null;
     }
 
 
-
-
-
-
-
+    @Override
+    public Set<Store> findAllStores() throws DaoException {
+        return null;
+    }
 }

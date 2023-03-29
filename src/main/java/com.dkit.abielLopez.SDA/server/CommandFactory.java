@@ -24,6 +24,14 @@ public class CommandFactory {
                 newCommand = new FindAllGames();
             }
         }
+        else if(command instanceof ProtocolMenuOptions.StoresGamesMenuOptions)
+
+        {
+            if(command == ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_STORES)
+            {
+                newCommand = new FindAllGames();//TODO
+            }
+        }
 
 
 

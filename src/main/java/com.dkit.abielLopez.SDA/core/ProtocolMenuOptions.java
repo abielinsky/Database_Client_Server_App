@@ -8,6 +8,7 @@ public class ProtocolMenuOptions {
         PRINT_CLIENT_MAIN_MENU,
         DISPLAY_LIST_OF_GAMES,
         NONE,
+        START_STORE_MENU
 
     }
 

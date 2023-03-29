@@ -5,7 +5,7 @@ import com.dkit.abielLopez.SDA.client.clientmenus.StoreMenu;
 import com.dkit.abielLopez.SDA.client.clientmenus.Menu;
 import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
-import com.dkit.abielLopez.SDA.dto.GamesStoreManager;
+import com.dkit.abielLopez.SDA.dto.StoreManager;
 import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;
 
 
@@ -26,7 +26,7 @@ public class Client {
         try
         {
             //Step 1: Establish a connection with the server
-            InetAddress serverIP = InetAddress.getByName("127.0.0.1");
+            InetAddress serverIP = InetAddress.getByName("localhost");
             Socket dataSocket = new Socket(serverIP, SERVER_PORT);
 
             //Step 2: Build input and output streams linked to the socket
@@ -34,6 +34,7 @@ public class Client {
             PrintWriter output = new PrintWriter(new OutputStreamWriter(out));
 
             InputStream in = dataSocket.getInputStream();
+            System.out.println("IM THE CLIENT");
 
             //An example of the Decorator design pattern
             Scanner input = new Scanner(new InputStreamReader(in));
@@ -42,9 +43,14 @@ public class Client {
                     selectedOption = ProtocolMenuOptions.ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU;
 
             boolean quit = false;
-            Menu gamesStoreMenu = new StoreMenu(input, output);
+            Menu storeMenu = new StoreMenu(input, output);
 
-            GamesStoreManager gamesStoreManager = ((StoreMenu) gamesStoreMenu).initializeGamesStoreManager();
+            System.out.println("selecting option ");
+
+            StoreManager storeManager = ((StoreMenu) storeMenu).initializeGamesStoreManager();
+
+
+            System.out.println("initialized games store manager");
 
 
             start();
@@ -54,6 +60,7 @@ public class Client {
 
                 switch (selectedOption) {
                     case PRINT_CLIENT_MAIN_MENU:
+                        System.out.println("print client main menu");
                         ClientPrintMenuOptions.printOptionsMainMenu();
                         break;
 
@@ -62,10 +69,10 @@ public class Client {
                         break;
 
 
-//                    case DISPLAY_STORES_OF_GAMES:
-//                        gamesStoreManager.displayListOfStores();
-//                        // Code to add a new game to the database
-//                        break;
+                    case START_STORE_MENU:
+                        ((StoreMenu) storeMenu).setGamesStoreManager(storeManager);
+                        storeMenu.start();
+                        break;
 
 
 //
@@ -118,6 +125,7 @@ public class Client {
 
     public static void start()
     {
+        System.out.println("in start");
         welcomeScreen();
         ClientPrintMenuOptions.printOptionsMainMenu();
     }

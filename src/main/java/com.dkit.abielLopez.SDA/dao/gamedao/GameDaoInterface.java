@@ -6,13 +6,17 @@ import com.google.gson.Gson;
 
 import java.util.List;
 
-public interface GameDaoInterface {
+public interface GameDaoInterface
+
+{
 
     Gson gsonParser = new Gson();
     List<Game> findAllGames() throws DaoException;
 
     public String findAllGamesJson() throws DaoException;
 
+    public List<Game> findAllGamesInStore(int storeIDToBeFound) throws DaoException;
 
-    String findAllTrainsJson() throws DaoException;
+
+
 }
