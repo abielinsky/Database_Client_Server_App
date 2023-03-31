@@ -40,7 +40,7 @@ public class ThreadPerClient implements Runnable
             {
 
                 //take information from the client
-                //System.out.println(input.nextLine());
+              //  System.out.println(input.nextLine());
                 incomingPacket.readFromJSON(new JSONObject(input.nextLine()));
                 System.out.println("Received message " + incomingPacket.getMessageType());
 

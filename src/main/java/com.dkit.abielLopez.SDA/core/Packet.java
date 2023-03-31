@@ -61,7 +61,9 @@ public class Packet {
                 jo.get("messageType").toString().equals("QUIT_GAME_MENU") ||
                 jo.get("messageType").toString().equals("NONE")||
 
-                        jo.get("messageType").toString().equals("DISPLAY_LIST_OF_STORES")
+        jo.get("messageType").toString().equals("DISPLAY_LIST_OF_STORES")||
+        jo.get("messageType").toString().equals("DISPLAY_LIST_OF_GAMES")
+
 
         )
         {
@@ -100,21 +102,11 @@ public class Packet {
         {
             this.messageType = messageType;
         }
-//
-//        else if(messageType instanceof StationMenuOptions)
-//        {
-//            this.messageType = messageType;
-//        }
-//
-//        else if(messageType instanceof ScheduleMenuOptions)
-//        {
-//            this.messageType = messageType;
-//        }
-//
-//        else if(messageType instanceof JourneyRouteMenuOptions)
-//        {
-//            this.messageType = messageType;
-//        }
+
+        else if(messageType instanceof ProtocolMenuOptions.StoreMenuOptions)
+        {
+            this.messageType = messageType;
+        }
 
     }
 

@@ -7,6 +7,7 @@ import com.dkit.abielLopez.SDA.dao.storedao.MySqlStoreDao;
 import com.dkit.abielLopez.SDA.dao.storedao.StoreDaoInterface;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
+
 import java.util.*;
 
 public class StoreManager {

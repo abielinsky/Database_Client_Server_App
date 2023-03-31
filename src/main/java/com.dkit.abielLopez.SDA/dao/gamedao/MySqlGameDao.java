@@ -34,8 +34,8 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
             rs = ps.executeQuery();
 
             while (rs.next()) {
-                int gameID = rs.getInt("game_ID");
-                int gameStoreID = rs.getInt("gameStore_ID");
+                int gameID = rs.getInt("id_Game");
+                int gameStoreID =0;// rs.getInt("gameStore_ID");
                 String title = rs.getString("title_Game");
                 String genre = rs.getString("genre_Game");
                 int releaseYear = rs.getInt("release_year_Game");

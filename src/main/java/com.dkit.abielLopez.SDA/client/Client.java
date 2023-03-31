@@ -60,16 +60,16 @@ public class Client {
 
                 switch (selectedOption) {
                     case PRINT_CLIENT_MAIN_MENU:
-                        System.out.println("print client main menu");
+                        System.out.println("print client main menu ------------------------------");
                         ClientPrintMenuOptions.printOptionsMainMenu();
                         break;
 
-                    case QUIT_CLIENT_MENU:
+                    case QUIT_CLIENT_MENU:  //0
                         quit = true;
                         break;
 
 
-                    case START_STORE_MENU:
+                    case START_STORE_MENU:  // GAME MENU
                         ((StoreMenu) storeMenu).setGamesStoreManager(storeManager);
                         storeMenu.start();
                         break;

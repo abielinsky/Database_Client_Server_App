@@ -23,9 +23,7 @@ public class CollectionsMenu
 
     public void start()
     {
-        initializeListOfTrains();
-
-
+        initializeListOfGames();
         MenuPrintOptions.printOptionsCollectionsMenu();
         setUpCollectionsMenu();
     }
@@ -89,7 +87,7 @@ public class CollectionsMenu
         }
     }
 
-    public void initializeListOfTrains()
+    public void initializeListOfGames()
     {
         games.add(new Game(1, 1,"Mario", "-Adventure", 2000, "Nintendo", 59.99, 100 ));
         games.add(new Game(2, 1, "Legend of Zelda", "-Adventure", 1998, "Nintendo", 49.99, 95));

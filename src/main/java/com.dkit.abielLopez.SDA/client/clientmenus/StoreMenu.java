@@ -23,7 +23,6 @@ public class StoreMenu extends Menu
     }
 
 
-
     @Override
     public void start()
     {
@@ -36,9 +35,6 @@ public class StoreMenu extends Menu
     }
 
 
-
-
-
     private void setUpStoresMenu()
     {
         ProtocolMenuOptions.StoreMenuOptions selectedOption = ProtocolMenuOptions.StoreMenuOptions.PRINT_STORE_MENU;
@@ -49,12 +45,7 @@ public class StoreMenu extends Menu
         Game game = null;
         while (selectedOption != ProtocolMenuOptions.StoreMenuOptions.QUIT_STORE_MENU)
         {
-
-
             selectedOption = getValidateMenuOptionsEnum().validateStoreMenuOptions();
-
-
-
             Packet outgoingPacket = new Packet(selectedOption, message);
             Packet responsePacket = new Packet(ProtocolMenuOptions.ClientMainMenuOptions.NONE, null);
 
@@ -70,15 +61,8 @@ public class StoreMenu extends Menu
 
                 case DISPLAY_LIST_OF_GAMES:
                     displayListOfGames(outgoingPacket, responsePacket);
-
-
-
-
-
             }
-
         }
-
     }
 
     private void displayListOfGames(Packet outgoingPacket, Packet responsePacket) {
@@ -114,7 +98,7 @@ public class StoreMenu extends Menu
         super.responsePacket(responseStorePacket);
 
         Type arrayListStoreType = new TypeToken<Set<Store>>() {}.getType();
-
+        System.out.println(responseStorePacket.getPayload());
         Set<Store> stores = getGsonParser().fromJson(responseStorePacket.getPayload(), arrayListStoreType);
 
         getStorePacket.setMessageType(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_GAMES);

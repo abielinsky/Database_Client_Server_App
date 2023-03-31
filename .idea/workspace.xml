@@ -4,31 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="working and setting up client side and some server side. 2, showing methods for display all Games">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/storedao/MySqlStoreDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/storedao/StoreDaoInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/enums/CollectionsMenuOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/enums/DTOMenuOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/enums/MainMenuOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/App.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/CollectionsMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/DTOMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/MenuPrintOptions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/ThreadPerClient.java" afterDir="false" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="fixing problems of server and client to print data">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientconstants/ClientPrintMenuOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientconstants/ClientPrintMenuOptions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/StoreMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/client/clientmenus/StoreMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/Packet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/Packet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/ProtocolMenuOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/ProtocolMenuOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/constants/Colours.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/core/constants/Colours.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/GameDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/GameDaoInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/MySqlGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/MySqlGameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/GamesStoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/StoreManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/CommandFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/CommandFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/validation/ValidationForEnumMenus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/validation/ValidationForEnumMenus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/StoreManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/StoreManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/exceptions/DaoException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/exceptions/DaoException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/CollectionsMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/part1and2app/CollectionsMenu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/ThreadPerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/server/ThreadPerClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,18 +55,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_SamplesCA06/CA4OOPnialloreillyGD2",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_CA_06/Database_Client_Server_App&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dkit.abielLopez.SDA.client" />
@@ -201,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679964448595</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fixing problems of server and client to print data">
+      <created>1680053049444</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1680053049444</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -226,7 +222,8 @@
     <MESSAGE value="working and setting up client side and some server side." />
     <MESSAGE value="working and setting up client side and some server side. 2" />
     <MESSAGE value="working and setting up client side and some server side. 2, showing methods for display all Games" />
-    <option name="LAST_COMMIT_MESSAGE" value="working and setting up client side and some server side. 2, showing methods for display all Games" />
+    <MESSAGE value="fixing problems of server and client to print data" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing problems of server and client to print data" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
