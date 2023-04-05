@@ -27,7 +27,7 @@ public class Client {
         {
             //Step 1: Establish a connection with the server
             InetAddress serverIP = InetAddress.getByName("localhost");
-            Socket dataSocket = new Socket(serverIP, SERVER_PORT);
+            Socket dataSocket = new Socket(serverIP, ServiceDetails.SERVER_PORT);
 
             //Step 2: Build input and output streams linked to the socket
             OutputStream out = dataSocket.getOutputStream();
@@ -59,17 +59,17 @@ public class Client {
                 selectedOption = validateClientMenuOptionsEnum.validateClientMenuOptionsEnum();
 
                 switch (selectedOption) {
-                    case PRINT_CLIENT_MAIN_MENU:
+                    case ClientMainMenuOptions.PRINT_CLIENT_MAIN_MENU:
                         System.out.println("print client main menu ------------------------------");
                         ClientPrintMenuOptions.printOptionsMainMenu();
                         break;
 
-                    case QUIT_CLIENT_MENU:  //0
+                    case ClientMainMenuOptions.QUIT_CLIENT_MENU:  //0
                         quit = true;
                         break;
 
 
-                    case START_STORE_MENU:  // GAME MENU
+                    case ClientMainMenuOptions.START_STORE_MENU:  // GAME MENU
                         ((StoreMenu) storeMenu).setGamesStoreManager(storeManager);
                         storeMenu.start();
                         break;

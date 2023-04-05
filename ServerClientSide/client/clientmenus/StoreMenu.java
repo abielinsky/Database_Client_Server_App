@@ -51,15 +51,15 @@ public class StoreMenu extends Menu
 
             switch (selectedOption)
             {
-                case PRINT_STORE_MENU:
+                case StoreMenuOptions.PRINT_STORE_MENU:
                     ClientPrintMenuOptions.printOptionsClientGameMenu();
                     break;
 
-                case QUIT_STORE_MENU:
+                case StoreMenuOptions.QUIT_STORE_MENU:
                     quit = true;
                     break;
 
-                case DISPLAY_LIST_OF_GAMES:
+                case StoreMenuOptions.DISPLAY_LIST_OF_GAMES:
                     displayListOfGames(outgoingPacket, responsePacket);
             }
         }
@@ -69,11 +69,11 @@ public class StoreMenu extends Menu
         super.outputPacket(outgoingPacket);
         super.responsePacket(responsePacket);
         List<Game> game = getGsonParser().fromJson(responsePacket.getPayload(), arrayListGames);
-        displayListOfTrains(game);
+        displayListOfGames(game);
     }
 
 
-    private void displayListOfTrains(List<Game> games) {
+    private void displayListOfGames(List<Game> games) {
         Collections.sort(games);
         getDisplayHeading().displayGameHeading();
 
@@ -98,14 +98,18 @@ public class StoreMenu extends Menu
         super.responsePacket(responseStorePacket);
 
         Type arrayListStoreType = new TypeToken<Set<Store>>() {}.getType();
-        System.out.println(responseStorePacket.getPayload());
+
+
+        //System.out.println(responseStorePacket.getPayload());
+
+
         Set<Store> stores = getGsonParser().fromJson(responseStorePacket.getPayload(), arrayListStoreType);
 
-        getStorePacket.setMessageType(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_GAMES);
-        responseStorePacket.setPayload("");
+//        getStorePacket.setMessageType(ProtocolMenuOptions.StoresGamesMenuOptions.DISPLAY_LIST_OF_GAMES);
+//        responseStorePacket.setPayload("");
 
-        super.outputPacket(getStorePacket);
-        super.responsePacket(responseStorePacket);
+      //  super.outputPacket(getStorePacket);
+    //    super.responsePacket(responseStorePacket);
 
         ArrayList<Game> games = getGsonParser().fromJson(responseStorePacket.getPayload(), arrayListGames);
 

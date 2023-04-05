@@ -36,11 +36,16 @@ public class ThreadPerClient implements Runnable
             Packet incomingPacket = new Packet(ProtocolMenuOptions.ClientMainMenuOptions.NONE,null);
             Packet response = null;
 
+            System.out.println("error commiiiiinggggg ------------------");
+
             while (!incomingPacket.getMessageType().equals(ProtocolMenuOptions.ClientMainMenuOptions.QUIT_CLIENT_MENU))
             {
 
                 //take information from the client
               //  System.out.println(input.nextLine());
+
+
+
                 incomingPacket.readFromJSON(new JSONObject(input.nextLine()));
                 System.out.println("Received message " + incomingPacket.getMessageType());
 

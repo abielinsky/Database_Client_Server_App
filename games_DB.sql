@@ -15,6 +15,7 @@ price_Game DOUBLE(10,2),
 rate_Game INT
 );
 
+
 CREATE TABLE Platform (
 id_Platform INT PRIMARY KEY AUTO_INCREMENT,
 name_Platform VARCHAR(255) NOT NULL,

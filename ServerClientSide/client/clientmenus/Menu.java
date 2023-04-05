@@ -70,7 +70,13 @@ public abstract class Menu
     public void responsePacket(Packet responsePacket)
     {
         String source = getInput().nextLine();
-        System.out.println(source);
+
+
+
+      //  System.out.println(source);
+
+
+
         responsePacket.readFromJSON(new JSONObject(source));
     }
 

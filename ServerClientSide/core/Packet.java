@@ -1,6 +1,7 @@
 package com.dkit.abielLopez.SDA.core;
 
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
+import com.google.gson.internal.bind.util.ISO8601Utils;
 import org.json.JSONObject;
 
 public class Packet {
@@ -52,9 +53,11 @@ public class Packet {
 
     public void readFromJSON(JSONObject jo)
     {
+        System.out.println("...in readFromJson() jo= " + jo.toString());
 
         if
         (
+
                 jo.get("messageType").toString().equals("PRINT_STORE_MAIN_MENU") ||
                 jo.get("messageType").toString().equals("PRINT_GAME_MAIN_MENU") ||
                 jo.get("messageType").toString().equals("QUIT_STORE_MENU") ||

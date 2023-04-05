@@ -82,6 +82,7 @@ public class DTOMenu
 
     private void displayListOfGames()
     {
+
         collectionsMenu.displayGameHeading();
 
         for (Game game : games)
@@ -90,24 +91,24 @@ public class DTOMenu
         }
     }
 
-    private void displayJsonStringListOfTrains()
+    private void displayJsonStringListOfGames()
     {
         try
         {
-            String trainJsonString = gameDAO.findAllGamesJson();
+            String gameJsonString = gameDAO.findAllGamesJson();
 
-            if(trainJsonString.equals("null"))
+            if(gameJsonString.equals("null"))
             {
-                System.out.println(Colours.RED  + "Train ID does not exist. Please go to the Menu option to Display Trains " + "\n"
+                System.out.println(Colours.RED  + "GAme ID does not exist. Please go to the Menu option to Display Games " + "\n"
                         + "and find one that is available." + Colours.RESET);
             }
             else
             {
-                String[] trainJsonStringArray = trainJsonString.split("(?=[{])");
+                String[] gameJsonStringArray = gameJsonString.split("(?=[{])");
 
-                for (String train : trainJsonStringArray)
+                for (String game : gameJsonStringArray)
                 {
-                    System.out.println(Colours.DARK_BLUE + train + Colours.RESET);
+                    System.out.println(Colours.DARK_BLUE + game + Colours.RESET);
                 }
 
             }
