@@ -1,8 +1,6 @@
-package com.dkit.abielLopez.SDA.dao.gamedao;
+package com.dkit.abielLopez.SDA.dao;
 
-import com.dkit.abielLopez.SDA.dao.MySqlDao;
 import com.dkit.abielLopez.SDA.dto.Game;
-import com.dkit.abielLopez.SDA.dto.Store;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
 import java.sql.Connection;
@@ -69,6 +67,11 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
     }
 
     @Override
+    public List<Game> findGameById() throws DaoException {
+        return null;
+    }
+
+    @Override
     public String findAllGamesJson() throws DaoException {
 
         List<Game> games = findAllGames();
@@ -83,9 +86,50 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
         return null;
     }
 
-
     @Override
-    public Set<Store> findAllStores() throws DaoException {
-        return null;
+    public void insertNewGame(Game game) throws DaoException {
+        Connection con = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            //Get a connection to the database
+            con = this.getConnection();
+            String query = "INSERT INTO game (id_Game, title_Game, genre_Game, release_year_Game, " +
+                    "publisher_Game, price_Game, rate_Game) VALUES (?,?,?,?,?,?,?)";
+            ps = con.prepareStatement(query);
+
+            ps.setInt(   1, game.getGame_ID());
+            ps.setString(2, game.getTitle_Game());
+            ps.setString(3, game.getGenre_Game());
+            ps.setInt(   4, game.getRelease_year_Game());
+            ps.setString(5, game.getPublisher_Game());
+            ps.setDouble(6, game.getPrice_Game());
+            ps.setDouble(7, game.getRate_Game());
+
+
+            //Use the prepared statement to execute the sql
+            ps.executeUpdate();
+
+        } catch (SQLException sqe) {
+            throw new DaoException("insertNewGame() " + sqe.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (con != null) {
+
+                    freeConnection(con);
+                }
+            } catch (SQLException sqe) {
+                throw new DaoException("insertNewGame() " + sqe.getMessage());
+            }
+        }
     }
+
+
 }

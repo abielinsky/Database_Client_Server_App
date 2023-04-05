@@ -5,7 +5,6 @@ import com.dkit.abielLopez.SDA.client.clientmenus.StoreMenu;
 import com.dkit.abielLopez.SDA.client.clientmenus.Menu;
 import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
-import com.dkit.abielLopez.SDA.dto.StoreManager;
 import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;
 
 

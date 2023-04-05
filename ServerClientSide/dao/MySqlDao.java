@@ -1,6 +1,5 @@
 package com.dkit.abielLopez.SDA.dao;
 
-import com.dkit.abielLopez.SDA.dto.Store;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
 import java.sql.Connection;

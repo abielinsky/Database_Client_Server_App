@@ -4,7 +4,6 @@ import com.dkit.abielLopez.SDA.core.constants.Colours;
 import com.dkit.abielLopez.SDA.dao.gamedao.GameDaoInterface;
 import com.dkit.abielLopez.SDA.dao.gamedao.MySqlGameDao;
 import com.dkit.abielLopez.SDA.dto.Game;
-import com.dkit.abielLopez.SDA.dto.StoreManager;
 import com.dkit.abielLopez.SDA.enums.DTOMenuOptions;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 import com.dkit.abielLopez.SDA.validation.ValidationForEnumMenus;

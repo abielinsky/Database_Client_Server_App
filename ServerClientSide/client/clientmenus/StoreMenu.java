@@ -4,8 +4,6 @@ import com.dkit.abielLopez.SDA.client.clientconstants.ClientPrintMenuOptions;
 import com.dkit.abielLopez.SDA.core.Packet;
 import com.dkit.abielLopez.SDA.core.ProtocolMenuOptions;
 import com.dkit.abielLopez.SDA.dto.Game;
-import com.dkit.abielLopez.SDA.dto.StoreManager;
-import com.dkit.abielLopez.SDA.dto.Store;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.PrintWriter;

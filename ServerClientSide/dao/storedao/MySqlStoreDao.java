@@ -3,7 +3,6 @@ package com.dkit.abielLopez.SDA.dao.storedao;
 
 
 import com.dkit.abielLopez.SDA.dao.MySqlDao;
-import com.dkit.abielLopez.SDA.dto.Store;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
 
 import java.sql.*;
