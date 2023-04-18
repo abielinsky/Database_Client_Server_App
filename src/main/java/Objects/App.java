@@ -7,6 +7,7 @@ import DTOs.Game;
 import Exceptions.DaoException;
 
 import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ public class App { ///start app
 
     private static List<Game> games;
     private static GameDAOInterface IGameDAO = new MySqlGameDAO();
+    private static Scanner IDinput = new Scanner(System.in);
 
 
 
@@ -110,12 +112,68 @@ public class App { ///start app
 
 
 
-    private void findGameByID() {
+    //todo, ============================================ DISPLAY A GAME BY ID ============================================
+    private void findGameByID() throws DaoException {
+
+        games = IGameDAO.displayAllGames();
+
+        if (games.isEmpty()) {
+            System.out.println("There are no games in the database.");
+        } else {
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+            System.out.println("\n********************************************************************************************************************************");
+            for (Game game : games) {
+                System.out.println(game.displayAllGames());
+            }
+        }
+        System.out.println("********************************************************************************************************************************");
+
+
+        IDinput = new Scanner(System.in);
+
+        boolean IDtrue = false;
+        do {
+            try {
+                System.out.println("Enter the ID of the game you want to find: ");
+
+                int id = IDinput.nextInt();
+                IDtrue = true;
+                Game gamebyID = IGameDAO.findGameById(id);
+
+                if (gamebyID == null) {
+                    System.out.println("No games found with the ID" + id);
+                    System.out.println("continue");
+                } else {
+
+                    System.out.println("\n********************************************************************************************************************************");
+                    System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+                    System.out.println("\n********************************************************************************************************************************");
+                    System.out.println(gamebyID.displayAllGames());
+                    System.out.println("********************************************************************************************************************************");
+
+                    System.out.println("continue...");
+                }
+
+            } catch (InputMismatchException | DaoException e) {
+                IDinput.nextLine();
+                System.out.println("Enter a Valid ID number");
+
+            }
+        } while ((IDtrue != true));
+
 
 
 
     }
 
+    //todo, ============================================ DISPLAY A GAME BY ID ============================================
+
+
+
+
+
+    //todo, ============================================ DISPLAY ALL THE GAMES ============================================
     private void displayAllGames() throws DaoException {
 
         games = IGameDAO.displayAllGames();
@@ -132,7 +190,7 @@ public class App { ///start app
         }
         System.out.println("********************************************************************************************************************************");
     }
-
+    //todo, ============================================ DISPLAY ALL THE GAMES ============================================
 
 } ///finish app
 

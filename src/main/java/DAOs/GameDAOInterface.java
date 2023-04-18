@@ -9,4 +9,9 @@ public interface GameDAOInterface {
 
 
     List<Game> displayAllGames() throws DaoException;
+
+    Game findGameById(int id) throws DaoException;
+
+
+
 }
