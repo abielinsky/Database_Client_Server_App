@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="doing features updates and fixing bugs.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/exceptions/Query.java" afterDir="false" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="doing some updates, and fixing errors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/AppObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/AppObjects/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/GameDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/GameDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlGameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/games_DB.sql" beforeDir="false" afterPath="$PROJECT_DIR$/games_DB.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_ServerSide_Abiel_Java/Database_Client_Server_App/src/main/java/com.dkit.abielLopez.SDA",
+    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000/Database_Client_Server_App/src/main/java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,6 +69,7 @@
       <recent name="com.dkit.abielLopez.SDA.client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000\Database_Client_Server_App\src\main\java" />
       <recent name="E:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_ServerSide_Abiel_Java\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
       <recent name="F:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_CA'S\000_CA_06\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
     </key>
@@ -83,8 +82,8 @@
   </component>
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dkit.abielLopez.SDA.AppObjects.App" />
-      <module name="CA5OOPnialloreillyGD2" />
+      <option name="MAIN_CLASS_NAME" value="Objects.App" />
+      <module name="Server_Client_SQL" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.dkit.abielLopez.SDA.AppObjects.*" />
@@ -138,6 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679660495065</updated>
       <workItem from="1681776599970" duration="6199000" />
+      <workItem from="1681857534556" duration="1044000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -237,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681776699468</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="doing some updates, and fixing errors">
+      <created>1681857896213</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1681857896213</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +276,8 @@
     <MESSAGE value="Trying to fix problems to display games." />
     <MESSAGE value="doing features beginning" />
     <MESSAGE value="doing features updates and fixing bugs." />
-    <option name="LAST_COMMIT_MESSAGE" value="doing features updates and fixing bugs." />
+    <MESSAGE value="doing some updates, and fixing errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="doing some updates, and fixing errors" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

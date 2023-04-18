@@ -40,8 +40,8 @@ FOREIGN KEY (id_Store) REFERENCES Store(id_Store)
 
 INSERT INTO Game (title_Game, genre_Game, release_year_Game, publisher_Game, price_Game, rate_Game)
 VALUES
-('The Legend of Zelda: Breath of the Wild', 'Action-Adventure', 2017, 'Nintendo', 59.99, 10),
-('The Witcher 3: Wild Hunt', 'Action RPG', 2015, 'CD Projekt Red', 39.99, 9),
+('The Legend of Zelda', 'Action-Adventure', 2017, 'Nintendo', 59.99, 10),
+('The Witcher 3', 'Action RPG', 2015, 'CD Projekt Red', 39.99, 9),
 ('Grand Theft Auto V', 'Action-Adventure', 2013, 'Rockstar Games', 29.99, 8),
 ('Portal 2', 'Puzzle-platform', 2011, 'Valve Corporation', 9.99, 9),
 ('Half-Life 2', 'First-person shooter', 2004, 'Valve Corporation', 9.99, 9),
@@ -50,7 +50,7 @@ VALUES
 ('Dark Souls', 'Action RPG', 2011, 'Namco Bandai Games', 19.99, 9),
 ('Fallout: New Vegas', 'Action RPG', 2010, 'Bethesda Softworks', 19.99, 8),
 ('Mass Effect 2', 'Action RPG', 2010, 'Electronic Arts', 19.99, 9),
-('Metal Gear Solid V: The Phantom Pain', 'Action-Adventure', 2015, 'Konami', 19.99, 8),
+('Metal Gear Solid V', 'Action-Adventure', 2015, 'Konami', 19.99, 8),
 ('Overwatch', 'First-person shooter', 2016, 'Blizzard Entertainment', 39.99, 9),
 ('Stardew Valley', 'Simulation', 2016, 'ConcernedApe', 14.99, 9),
 ('Minecraft', 'Sandbox', 2011, 'Mojang Studios', 26.95, 9),

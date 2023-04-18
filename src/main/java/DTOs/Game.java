@@ -67,7 +67,7 @@ public class Game implements Comparable<Game>{
 
     public String displayAllGames() {
 
-        return String.format("%s %-5s %-20s %-20s %-10s %-12s %-10s %-12s %s","|",
+        return String.format("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","|",
                 getGame_ID(), getTitle_Game(), getGenre_Game(), getRelease_year_Game(),
                 getPublisher_Game(), getPrice_Game(), getRate_Game(), "|");
 

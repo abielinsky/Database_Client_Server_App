@@ -27,7 +27,6 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
             String query = "SELECT * FROM game";
             ps = connection.prepareStatement(query);
 
-            System.out.println("ps null said");
             //Use the prepared statement to execute the sql
             resultSet = ps.executeQuery();
 
