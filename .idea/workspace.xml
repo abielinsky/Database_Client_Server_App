@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="doing some updates, and fixing errors">
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="changes to game for id.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
@@ -136,7 +137,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679660495065</updated>
       <workItem from="1681776599970" duration="6199000" />
-      <workItem from="1681857534556" duration="3110000" />
+      <workItem from="1681857534556" duration="4278000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -250,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681859120934</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="changes to game for id.">
+      <created>1681860708014</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1681860708014</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -283,7 +291,8 @@
     <MESSAGE value="doing features beginning" />
     <MESSAGE value="doing features updates and fixing bugs." />
     <MESSAGE value="doing some updates, and fixing errors" />
-    <option name="LAST_COMMIT_MESSAGE" value="doing some updates, and fixing errors" />
+    <MESSAGE value="changes to game for id." />
+    <option name="LAST_COMMIT_MESSAGE" value="changes to game for id." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

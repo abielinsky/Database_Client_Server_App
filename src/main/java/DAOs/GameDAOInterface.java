@@ -12,6 +12,11 @@ public interface GameDAOInterface {
 
     Game findGameById(int id) throws DaoException;
 
+    void deleteGameById(int id)  throws DaoException;
+
+
+
+
 
 
 }

@@ -12,6 +12,16 @@ public class Game implements Comparable<Game>{
     private double price_Game;
     private double  rate_Game;
 
+    //TODO CONSTRUCTOR____ adding a new game______________________________________________________________________________
+    public Game(String titleGame, String genreGame, int releaseYearGame, String publisherGame, double priceGame, int rateGame) {
+        this.title_Game = titleGame;
+        this.genre_Game = genreGame;
+        this.release_year_Game = releaseYearGame;
+        this.publisher_Game = publisherGame;
+        this.price_Game = priceGame;
+        this.rate_Game = rateGame;
+    }
+
 
     @Override
     public int compareTo(Game o) {

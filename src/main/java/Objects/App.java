@@ -79,11 +79,13 @@ public class App { ///start app
                     case DELETE_GAME_BY_ID:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("====================================================== DELETE GAME BY ID =======================================================");
+                        deleteGameByID();
                         break;
 
                     case INSERT_NEW_GAME:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== INSERT NEW GAME =======================================================");
+                        addNewGame();
                         break;
 
                     case MENU_FILTERS:
@@ -109,6 +111,172 @@ public class App { ///start app
         } while (option != EXIT);
 
     } /// finish displayMenuApp
+
+
+
+    //todo, ================================================ ADD NEW GAMES ================================================
+    private void addNewGame() {
+
+        Scanner kb = new Scanner(System.in);
+
+        String title_Game = "";
+        boolean valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the title name: ");
+            title_Game = kb.nextLine();
+
+            if (title_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (title_Game.matches(".*\\d.*")){
+                System.out.println("Invalid title name, try again");
+            }
+            else
+            {
+                valid_Value = true;
+            }
+        }
+
+
+        String genre_Game = "";
+        boolean valid_genre_Game = false;
+
+        while (!valid_genre_Game) {
+            System.out.println("Enter the genre name: ");
+            genre_Game = kb.nextLine();
+
+            if (genre_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (genre_Game.matches(".*\\d.*")){
+                System.out.println("Invalid genre name, try again");
+            }
+            else
+            {
+                valid_genre_Game = true;
+            }
+        }
+
+        int releaseYear_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the release year: ");
+            try {
+                releaseYear_Game = Integer.parseInt(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("GAme must be an integer. Please enter a valid number:");
+            }
+        }
+
+        String publisher_Game = " ";
+        boolean valid_publisher_Game = false;
+
+        while (!valid_publisher_Game) {
+            System.out.println("Enter the publisher_Game name Company: ");
+            publisher_Game = kb.nextLine();
+
+            if (publisher_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (publisher_Game.matches(".*\\d.*")){
+                System.out.println("Invalid genre name, try again");
+            }
+            else
+            {
+                valid_publisher_Game = true;
+            }
+        }
+
+        double price_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the price: ");
+            try {
+                price_Game = Double.parseDouble(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Price must be a valid number. Please enter a valid price:");
+                valid_Value = false;
+            }
+        }
+
+        int rate_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the rate: ");
+            try {
+                rate_Game = Integer.parseInt(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Game must be an integer. Please enter a valid number:");
+            }
+        }
+
+
+        Game game = new Game( title_Game, genre_Game, releaseYear_Game, publisher_Game, price_Game, rate_Game);
+        System.out.println("Game Created: " + game.toString());
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+    //todo, ============================================ DELETE game BY THE ID ============================================
+    private void deleteGameByID() throws DaoException {
+
+        games = IGameDAO.displayAllGames();
+
+        if (games.isEmpty()) {
+            System.out.println("There are no games in the database.");
+        } else {
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+            System.out.println("\n********************************************************************************************************************************");
+            for (Game game : games) {
+                System.out.println(game.displayAllGames());
+            }
+        }
+        System.out.println("********************************************************************************************************************************");
+
+
+        IDinput = new Scanner(System.in);
+
+        boolean IDtrue = false;
+        do {
+            try {
+                System.out.println("Enter the ID of the game you want to delete: ");
+
+                int id = IDinput.nextInt();
+                IDtrue = true;
+                Game gamebyID = IGameDAO.findGameById(id);
+
+                if (gamebyID == null) {
+                    System.out.println("No games found with the ID: " + id);
+                } else {
+                    System.out.println("The game with the ID: " + id + " has been deleted.");
+                    IGameDAO.deleteGameById(id);
+                }
+            } catch (InputMismatchException e) {
+                System.out.println("Invalid input. Please, enter a number.");
+                IDinput.nextLine();
+            }
+        } while (!IDtrue);
+
+    }
+
+
 
 
 

@@ -123,5 +123,42 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
         return game;
     }
 
+    @Override
+    public void deleteGameById(int id) throws DaoException {
+
+            Connection connection = null;
+            PreparedStatement ps = null;
+            ResultSet resultSet = null;
+            int game_ID = id;
+
+            try {
+                //Get a connection to the database
+                connection = this.getConnection();
+                String query = "DELETE FROM game where id_Game = ?";
+                ps = connection.prepareStatement(query);
+                ps.setString(1, String.valueOf(id));
+                ps.executeUpdate();
+
+            } catch (Exception e) {
+                throw new DaoException("deleteGameByID() " + e.getMessage());
+            }
+
+            finally {
+                try {
+                    if (resultSet != null) {
+                        resultSet.close();
+                    }
+                    if (ps != null) {
+                        ps.close();
+                    }
+                    if (connection != null) {
+                        freeConnection(connection);
+                    }
+                } catch (SQLException e) {
+                    throw new DaoException("findAllGames() " + e.getMessage());
+                }
+            }
+    }
+
 
 }
