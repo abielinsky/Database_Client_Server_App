@@ -2,14 +2,16 @@ package com.dkit.abielLopez.SDA.dao;
 
 import com.dkit.abielLopez.SDA.dto.Game;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 
 public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
@@ -131,5 +133,31 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
         }
     }
 
+    @Override
+    public String findAllGamesJSONServer() throws DaoException {
+        List<Game> gameList = findAllGames();
+
+
+        Gson gsonParser = new GsonBuilder()
+                .setPrettyPrinting()
+                .registerTypeAdapter(LocalDate.class, new Adapter())
+                .create();
+
+
+
+
+        String gameJsonString = gsonParser.toJson(gameList);
+
+
+        return gameJsonString;
+    }
+
+
 
 }
+
+
+
+
+
+

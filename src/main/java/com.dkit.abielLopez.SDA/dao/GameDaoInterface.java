@@ -27,4 +27,14 @@ public interface GameDaoInterface
     void insertNewGame(Game game) throws DaoException;
 
 
+    public String findAllGamesJSONServer() throws DaoException;
+
+
+
+
 }
+
+
+
+
+

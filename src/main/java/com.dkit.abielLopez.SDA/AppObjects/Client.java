@@ -1,36 +1,65 @@
 package com.dkit.abielLopez.SDA.AppObjects;
 
-import com.dkit.abielLopez.SDA.dao.GameDaoInterface;
-import com.dkit.abielLopez.SDA.dao.MySqlGameDao;
+import com.dkit.abielLopez.SDA.dao.Adapter;
 import com.dkit.abielLopez.SDA.dto.Game;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintWriter;
+import java.net.Socket;
+import java.time.LocalDate;
 import java.util.InputMismatchException;
-import java.util.List;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
-public class App {
+import static com.dkit.abielLopez.SDA.AppObjects.App.IGameDao;
+
+//import static com.dkit.abielLopez.SDA.AppObjects.App.*;
+
+
+public class Client {
+
+
 
     private static final Scanner kb = new Scanner(System.in);
-    private static Scanner scanner = new Scanner(System.in);
-    public static final GameDaoInterface IGameDao = new MySqlGameDao();
+    private static final Pattern PATTERN = Pattern.compile("^[0-9]{1,}$");
+    private static final  Gson gsonParser = new GsonBuilder()
+            .registerTypeAdapter(LocalDate.class, new Adapter())
+            .create();
 
-    public static void main(String[] args) {
-        start();
+
+    public static void main(String[] args) throws IOException {
+        Client client = new Client();
+        client.start();
+        
     }
 
-    public static void start() {
+
+    public void start() throws IOException{
+        
         System.out.println("\n+++++++++ Game Simulator Store ++++++++");
         System.out.println("=========================================");
+
+
+       
         try {
             displayMenu();
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
+        
+        
+
     }
 
     private static void displayMenu() throws IOException {
+
+
 
         final int DISPLAY_OPTION = 1;
         final int DELETE_OPTION = 2;
@@ -56,6 +85,8 @@ public class App {
                     case DISPLAY_OPTION: //Checking data farm
                         System.out.println("");
                         DisplayMenuOption();
+
+
                         break;
 
                     case DELETE_OPTION: //
@@ -84,13 +115,21 @@ public class App {
             }
 
         } while (option != EXIT);
-
-
     }
 
 
+    private static void DisplayMenuOption() throws IOException {
 
-    private static void DisplayMenuOption() {
+        Socket socket = new Socket("localhost", 8081);  // connect to server socket
+        OutputStream os = socket.getOutputStream();
+        PrintWriter socketWriter = new PrintWriter(os, true); ;   // true => auto flush buffers
+        Scanner socketReader = new Scanner(socket.getInputStream());  // wait for, and retrieve the reply
+        System.out.println("Client: Port# of this client : " + socket.getLocalPort());
+        System.out.println("Client: Port# of Server :" + socket.getPort());
+
+        System.out.println("Client message: The Client is running and has connected to the server");
+        System.out.println("Please choose option from the main menu: ");
+
 
         final int DISPLAY_ALL_GAMES = 1;
         final int DISPLAY_GAME_BY_ID = 2;
@@ -117,11 +156,37 @@ public class App {
             try {
                 String usersInput = input.nextLine();
                 option = Integer.parseInt(usersInput);
+
+                String response = null;
+                Game[] gameArray;
+
                 switch (option) {
                     case DISPLAY_ALL_GAMES: //Checking data games
-                        System.out.println(" ** Display All Games **");
-                        List<Game> gamesAll = IGameDao.findAllGames();
-                        System.out.println(gamesAll + "\n");
+
+                        //this is working
+
+//                        System.out.println(" ** Display All Games **");
+//                        List<Game> gamesAll = IGameDao.findAllGames();
+//                        System.out.println(gamesAll + "\n");
+
+
+
+                        System.out.println(" ************************** Display All Games ************************** ");
+
+
+                        socketWriter.println("DISPLAY_ALL_GAMES");
+                        System.out.println("you are here");
+
+                        response = socketReader.nextLine();
+                        System.out.println("Client message: Response from server: \"" + "JsonData:"+ "\"");
+                        System.out.println(response);
+
+                        gameArray = gsonParser.fromJson(response, Game[].class);
+                        System.out.println("\nConvert and display the JsonData to objects :\n ");
+                        Game.displayAllGAmes(gameArray);
+
+
+
 
                         break;
 
@@ -134,7 +199,7 @@ public class App {
                         System.out.println("Enter a right option");
                         break;
                 }
-            } catch (InputMismatchException | NumberFormatException | DaoException e) {
+            } catch (InputMismatchException | NumberFormatException e) {
                 //     System.out.print("*** ERROR, ENTER A VALID OPTION ***");
             }
 
@@ -253,5 +318,29 @@ public class App {
     }
 
 
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

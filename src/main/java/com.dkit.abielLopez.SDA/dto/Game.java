@@ -19,7 +19,7 @@ public class Game implements Comparable<Game>
                 int release_year_Game, String publisher_Game, double price_Game,
                 int rate_Game)
     {
-        this.game_ID = game_ID;
+        this.game_ID = 0;
         this.gameStore_ID = gameStore_ID;
         this.title_Game = title_Game;
         this.genre_Game = genre_Game;
@@ -29,9 +29,32 @@ public class Game implements Comparable<Game>
         this.rate_Game = rate_Game;
     }
 
-    public Game() {
+    public Game(String titleGame, String genreGame, int releaseYearGame, String publisherGame, double priceGame, int rateGame) {
+        this.title_Game = titleGame;
+        this.genre_Game = genreGame;
+        this.release_year_Game = releaseYearGame;
+        this.publisher_Game = publisherGame;
+        this.price_Game = priceGame;
+        this.rate_Game = rateGame;
+    }
+
+    public static Game[] displayAllGAmes(Game[] gamesList) {
+
+        System.out.println("\n-----------------------------------------------------------------------------------------------------------------------------");
+        System.out.printf("%s %-5s %-20s %-20s %-10s %-12s %-10s %-12s %s","|", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","|");
+        System.out.println("\n-----------------------------------------------------------------------------------------------------------------------------");
+        for (Game game : gamesList) {
+
+            System.out.printf("%s %-5d %-20s %-20s %-10s %-12s %s\n","|", game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(),
+                    game.getRelease_year_Game(), game.getPublisher_Game(), game.getPrice_Game(), game.getRate_Game(), "|");
+        }
+        System.out.println("---------------------------------------------------------------------------");
+        System.out.print("Press Enter to continue...");
+
+        return gamesList;
 
     }
+
 
     public int getGame_ID() {return game_ID;}
 
@@ -118,3 +141,7 @@ public class Game implements Comparable<Game>
 
 
 }
+
+
+
+

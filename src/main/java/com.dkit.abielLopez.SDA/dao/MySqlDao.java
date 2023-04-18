@@ -6,7 +6,6 @@ import com.dkit.abielLopez.SDA.exceptions.DaoException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.Set;
 
 
 public abstract class MySqlDao
@@ -63,3 +62,7 @@ public abstract class MySqlDao
 
 
 }
+
+
+
+
