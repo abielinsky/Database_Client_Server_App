@@ -4,23 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="doing features beginning">
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="doing features updates and fixing bugs.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/exceptions/Query.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/client/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/client/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/client/clientmenus/StoreMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/client/clientmenus/StoreMenu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/dao/MySqlDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/dao/MySqlDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/dao/gamedao/MySqlGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/dao/gamedao/MySqlGameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/dao/storedao/MySqlStoreDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/dao/storedao/MySqlStoreDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/dao/storedao/StoreDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/dao/storedao/StoreDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ServerClientSide/part1and2app/DTOMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/ServerClientSide/part1and2app/DTOMenu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/AppObjects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/AppObjects/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/GameDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/GameDaoInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/gamedao/MySqlGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlGameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/storedao/MySqlStoreDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/storedao/StoreDaoInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/GameDaoInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/GameDaoInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dao/MySqlGameDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/Store.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.dkit.abielLopez.SDA/dto/StoreManager.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +53,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "F:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/CA_02",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_ServerSide_Abiel_Java/Database_Client_Server_App/src/main/java/com.dkit.abielLopez.SDA",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -75,9 +71,11 @@
       <recent name="com.dkit.abielLopez.SDA.client" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_ServerSide_Abiel_Java\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
       <recent name="F:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_CA'S\000_CA_06\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.dkit.abielLopez.SDA.exceptions" />
       <recent name="com.dkit.abielLopez.SDA.dao.storedao" />
       <recent name="com.dkit.abielLopez.SDA.enums" />
       <recent name="com.dkit.abielLopez.SDA.part1and2app" />
@@ -86,7 +84,7 @@
   <component name="RunManager" selected="Application.App">
     <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dkit.abielLopez.SDA.AppObjects.App" />
-      <module name="000_CA_06" />
+      <module name="CA5OOPnialloreillyGD2" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.dkit.abielLopez.SDA.AppObjects.*" />
@@ -139,6 +137,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1679660495065</updated>
+      <workItem from="1681776599970" duration="6199000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -231,8 +230,18 @@
       <option name="project" value="LOCAL" />
       <updated>1680692838331</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="doing features updates and fixing bugs.">
+      <created>1681776699468</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1681776699468</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -259,7 +268,8 @@
     <MESSAGE value="fixing problems of server and client to print data" />
     <MESSAGE value="Trying to fix problems to display games." />
     <MESSAGE value="doing features beginning" />
-    <option name="LAST_COMMIT_MESSAGE" value="doing features beginning" />
+    <MESSAGE value="doing features updates and fixing bugs." />
+    <option name="LAST_COMMIT_MESSAGE" value="doing features updates and fixing bugs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

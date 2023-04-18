@@ -2,6 +2,7 @@ package com.dkit.abielLopez.SDA.dao;
 
 import com.dkit.abielLopez.SDA.dto.Game;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
+import com.dkit.abielLopez.SDA.exceptions.Query;
 import com.google.gson.Gson;
 
 import java.util.List;
@@ -13,9 +14,7 @@ public interface GameDaoInterface
     Gson gsonParser = new Gson();
     List<Game> findAllGames() throws DaoException;
 
-    List<Game> findGameById() throws DaoException;
-
-
+    List<Game> findGameById(int id) throws DaoException;
 
 
 
@@ -32,6 +31,9 @@ public interface GameDaoInterface
 
 
 
+    public void deleteGameById(int id) throws DaoException;
+
+    Game findGameById(Query query) throws DaoException;
 }
 
 

@@ -38,18 +38,38 @@ public class Game implements Comparable<Game>
         this.rate_Game = rateGame;
     }
 
+    public Game(int gameId, String titleGame, String genreGame, int releaseYearGame, String publisherGame, double priceGame, int rateGame) {
+
+        this.game_ID = gameId;
+        this.title_Game = titleGame;
+        this.genre_Game = genreGame;
+        this.release_year_Game = releaseYearGame;
+        this.publisher_Game = publisherGame;
+        this.price_Game = priceGame;
+        this.rate_Game = rateGame;
+    }
+
+    public String displayAllGAmes() {
+
+        return String.format("%s %-5d %-20s %-20s %-10s %-12s %-10s %-12s %s\n","|", getGame_ID(), getTitle_Game(), getGenre_Game(),
+                getRelease_year_Game(), getPublisher_Game(), getPrice_Game(), getRate_Game(), "|");
+
+    }
+
+
+
     public static Game[] displayAllGAmes(Game[] gamesList) {
 
-        System.out.println("\n-----------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\n-------------------------------------------------------------------------------------------------------------------------------");
         System.out.printf("%s %-5s %-20s %-20s %-10s %-12s %-10s %-12s %s","|", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","|");
-        System.out.println("\n-----------------------------------------------------------------------------------------------------------------------------");
+        System.out.println("\n-------------------------------------------------------------------------------------------------------------------------------");
         for (Game game : gamesList) {
 
-            System.out.printf("%s %-5d %-20s %-20s %-10s %-12s %s\n","|", game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(),
+            System.out.printf("%s %-5d %-20s %-20s %-10s %-12s %-10s %-12s %s\n","|", game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(),
                     game.getRelease_year_Game(), game.getPublisher_Game(), game.getPrice_Game(), game.getRate_Game(), "|");
         }
-        System.out.println("---------------------------------------------------------------------------");
-        System.out.print("Press Enter to continue...");
+        System.out.println("---------------------------------------------------------------------------------------------------------------------------------");
+
 
         return gamesList;
 
@@ -128,13 +148,6 @@ public class Game implements Comparable<Game>
     }
 
 
-    public void displayGame()
-    {
-        String leftAlignFormat = "| %-14s| %-14d| %-14d| %-14d| %-29s  |%n";
-        System.out.format( leftAlignFormat, game_ID, gameStore_ID, title_Game, genre_Game, release_year_Game, publisher_Game, price_Game, rate_Game);
-        System.out.print(("-").repeat(98) + "\n");
-
-    }
 
 
 

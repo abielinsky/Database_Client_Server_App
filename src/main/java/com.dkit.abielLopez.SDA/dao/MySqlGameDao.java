@@ -2,6 +2,7 @@ package com.dkit.abielLopez.SDA.dao;
 
 import com.dkit.abielLopez.SDA.dto.Game;
 import com.dkit.abielLopez.SDA.exceptions.DaoException;
+import com.dkit.abielLopez.SDA.exceptions.Query;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -11,10 +12,15 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
 public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
+
+    Connection connection = null;
+    PreparedStatement ps = null;
+    ResultSet resultSet = null;
 
     @Override
     public List<Game> findAllGames() throws DaoException {
@@ -68,10 +74,116 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
         return games;
     }
 
+
+
+
     @Override
-    public List<Game> findGameById() throws DaoException {
-        return null;
+    public List<Game> findGameById(int id) throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        int Game_ID = id;
+        Game game = null;
+
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+            String query = "SELECT * FROM `game` where SINGER_ID = ?;";
+            ps = connection.prepareStatement(query);
+            ps.setString(1, String.valueOf(id));
+
+            //Using a PreparedStatement to execute SQL...
+            resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+
+                Game_ID = resultSet.getInt("Game_ID");
+                String Title_Game = resultSet.getString("Title_Game");
+                String Genre_Game = resultSet.getString("Genre_Game");
+                int Release_year_Game = resultSet.getInt("Release_year_Game");
+                String Publisher_Game = resultSet.getString("Publisher_Game");
+                double Price_Game = resultSet.getDouble("Price_Game");
+                int Rate_Game = resultSet.getInt("Rate_Game");
+
+                game = new Game(Game_ID, Title_Game, Genre_Game, Release_year_Game, Publisher_Game, Price_Game, Rate_Game);
+                //  returnedSinger=s;
+            }
+        } catch (SQLException e) {
+            throw new DaoException("findGameBy ID() " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("findAllSingers() " + e.getMessage());
+            }
+        }
+        return Collections.singletonList(game);     // may be empty
     }
+
+//    @Override
+//    public List<Game> findGameById() throws DaoException {
+//        return null;
+//    }
+
+    @Override
+    public Game findGameById(Query query) throws DaoException {
+
+        Game game = null;
+        String sql = query.getSql();
+        String params = query.getParameters();
+
+        String sqlQuery = sql + params;
+        try {
+            connection = this.getConnection();;
+            ps = connection.prepareStatement(sqlQuery);
+
+            //Using a PreparedStatement to execute SQL...
+            resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+
+
+                int Game_ID = resultSet.getInt("Game_ID");
+                String Title_Game = resultSet.getString("Title_Game");
+                String Genre_Game = resultSet.getString("Genre_Game");
+                int Release_year_Game = resultSet.getInt("Release_year_Game");
+                String Publisher_Game = resultSet.getString("Publisher_Game");
+                double Price_Game = resultSet.getDouble("Price_Game");
+                int Rate_Game = resultSet.getInt("Rate_Game");
+
+                game = new Game(Game_ID, Title_Game, Genre_Game, Release_year_Game, Publisher_Game, Price_Game, Rate_Game);
+            }
+        } catch (SQLException e) {
+            throw new DaoException("findTeamByIDResultSet() " + e.getMessage());
+        } finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("findTeamByID() " + e.getMessage());
+            }
+        }
+        return game;
+
+
+
+    }
+
+
 
     @Override
     public String findAllGamesJson() throws DaoException {
@@ -143,15 +255,21 @@ public class MySqlGameDao extends MySqlDao implements GameDaoInterface {
                 .registerTypeAdapter(LocalDate.class, new Adapter())
                 .create();
 
-
-
-
         String gameJsonString = gsonParser.toJson(gameList);
-
 
         return gameJsonString;
     }
 
+
+    @Override
+    public void deleteGameById(int id) throws DaoException {
+
+    }
+
+//    @Override
+//    public Game findGameById(Query query) throws DaoException {
+//        return null;
+//    }
 
 
 }
