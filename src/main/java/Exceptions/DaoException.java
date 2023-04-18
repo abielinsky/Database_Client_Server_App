@@ -1,11 +1,8 @@
-package com.dkit.abielLopez.SDA.exceptions;
+package Exceptions;
 
 import java.sql.SQLException;
 
-
-
-public class DaoException extends SQLException
-{
+public class DaoException extends SQLException {
 
     public DaoException()
     {
@@ -15,5 +12,7 @@ public class DaoException extends SQLException
     {
         super(reason);
     }
+
+
 
 }

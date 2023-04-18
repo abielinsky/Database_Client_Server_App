@@ -5,10 +5,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>CA5OOPnialloreillyGD2</artifactId>
+    <artifactId>Server_Client_SQL</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    <name>CA5OOPnialloreillyGD2</name>
+    <name>Server_Client_SQL</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
@@ -113,15 +113,6 @@
                 </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>11</source>
-                    <target>11</target>
-                </configuration>
-            </plugin>
-        </plugins>
+
     </build>
 </project>
