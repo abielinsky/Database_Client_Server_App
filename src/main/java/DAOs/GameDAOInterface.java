@@ -19,7 +19,5 @@ public interface GameDAOInterface {
                     String publisherGame, double priceGame, int rateGame)  throws DaoException;
 
 
-
-
-
+    String AllGamesJSONServer() throws DaoException;
 }

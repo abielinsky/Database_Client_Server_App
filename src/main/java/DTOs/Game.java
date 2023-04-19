@@ -4,6 +4,7 @@ package DTOs;
 
 public class Game implements Comparable<Game>{
 
+
     private int game_ID;
     private String title_Game;
     private String genre_Game;
@@ -21,7 +22,6 @@ public class Game implements Comparable<Game>{
         this.price_Game = priceGame;
         this.rate_Game = rateGame;
     }
-
 
     @Override
     public int compareTo(Game o) {
@@ -82,6 +82,29 @@ public class Game implements Comparable<Game>{
                 getPublisher_Game(), getPrice_Game(), getRate_Game(), "|");
 
     }
+
+
+
+    public static Game[] displayAllGames(Game[] gameList) {
+
+
+        System.out.println("\n********************************************************************************************************************************");
+        System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+        System.out.println("\n********************************************************************************************************************************");
+
+        for (Game game : gameList) {
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","|",
+                    game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(), game.getRelease_year_Game(),
+                    game.getPublisher_Game(), game.getPrice_Game(), game.getRate_Game(), "|\n");
+        }
+
+        return gameList;
+
+
+
+    }
+
+
 
 
 

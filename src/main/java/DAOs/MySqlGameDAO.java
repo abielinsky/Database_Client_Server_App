@@ -2,11 +2,15 @@ package DAOs;
 
 import DTOs.Game;
 import Exceptions.DaoException;
+import JsonAdapter.MyCustomTypeAdapter;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -221,15 +225,19 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
 
     }
 
+    @Override
+    public String AllGamesJSONServer() throws DaoException {
+
+        List<Game> gameList = displayAllGames();
+        Gson gsonParser = new GsonBuilder()
+                .registerTypeAdapter(LocalDate.class, new MyCustomTypeAdapter())
+                .create();
+
+        String gameJsonString = gsonParser.toJson(gameList);
 
 
-
-
-
-
-
-
-
+        return gameJsonString;     // may be empty
+    }
 
 
 }
