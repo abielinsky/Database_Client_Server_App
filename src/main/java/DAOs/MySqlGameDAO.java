@@ -240,4 +240,19 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
     }
 
 
+    @Override
+    public String findGameByIDJSONServer(int id) throws DaoException {
+        Game game = findGameById(id);
+        Gson gsonParser = new GsonBuilder()
+                .registerTypeAdapter(LocalDate.class, new MyCustomTypeAdapter())
+                .create();
+
+        String gameJsonStringBYID = gsonParser.toJson(game);
+
+
+        return gameJsonStringBYID;
+
+    }
+
+
 }

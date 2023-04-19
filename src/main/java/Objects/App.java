@@ -383,6 +383,30 @@ public class App { ///start app
     }
     //todo, ============================================ DISPLAY ALL THE GAMES ============================================
 
+
+
+
+    public static Game displayGame(Game game) {
+
+        System.out.println("\n ********************************************************************************************************************************");
+        System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+        System.out.println("\n********************************************************************************************************************************");
+        System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s", "*", game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(), game.getRelease_year_Game(), game.getPublisher_Game(), game.getPrice_Game(), game.getRate_Game(), "*");
+        System.out.println("********************************************************************************************************************************");
+
+        return game;
+    }
+
+
+
+
+
+
+
+
+
+
+
 } ///finish app
 
 

@@ -18,8 +18,6 @@ public class Server {
     private static final Gson gsonParser = new GsonBuilder().registerTypeAdapter(LocalDate.class, new MyCustomTypeAdapter()).create();
 
 
-
-
     public static void main(String[] args) {
         Server server = new Server();
         server.start();
@@ -62,7 +60,6 @@ public class Server {
         System.out.println("Server: Server exiting, Goodbye!");
 
 
-
     }
 
 
@@ -92,57 +89,52 @@ public class Server {
             }
         }
 
+
         @Override
         public void run() {
             String message;
-            String[] tokens ;
-
-
-
+            String[] tokens;
 
             try {
                 while ((message = socketReader.readLine()) != null) {
                     System.out.println("Server: (ClientHandler): Read command from client " + clientNumber + ": " + message);
 
-                          if (message.startsWith("DISPLAY_ALL_GAMES")) {
-
-                                String allGames = IGameDao.AllGamesJSONServer();
-
-                                System.out.println("Return JSON string of the Games list");
-                                socketWriter.println(allGames);
-
-                          }
-
-                          else
-                          {
-                                socketWriter.println("Invalid request :(");
-                          }
+                    if (message.startsWith("DISPLAY_ALL_GAMES")) {
+                        String allGames = IGameDao.AllGamesJSONServer();
+                        System.out.println("Return JSON string of the Games list");
+                        socketWriter.println(allGames);
+                    } else if (message.startsWith("DISPLAY_GAME_BY_ID")) {
+                        tokens = message.split(" ");
+                        try {
+                            int id = Integer.parseInt(tokens[1]);
+                            String gamesJSON = IGameDao.findGameByIDJSONServer(id);
+                            System.out.println("Game: " + gamesJSON);
+                            socketWriter.println(gamesJSON);
+                        } catch (NumberFormatException e) {
+                            System.out.println("Please enter a valid ID");
+                        }
+                    } else {
+                        socketWriter.println("Invalid command.");
+                    }
                 }
 
                 socket.close();
 
-            } catch (IOException ex) {
-                ex.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
             } catch (DaoException e) {
                 e.printStackTrace();
             }
 
-
-
-            System.out.println("Server: (ClientHandler): Handler for Client " + clientNumber + " is terminating .....");
+            System.out.println("Server:  (ClientHandler): Client " + clientNumber + " has disconnected.");
         }
 
 
 
+
+
+
+
+
     }
-
-
-
-
-
-
-
-
-
-
 }

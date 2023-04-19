@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="uptades to first features.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/JsonAdapter/MyCustomTypeAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Objects/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Objects/Server.java" afterDir="false" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="Adding the display option to the server and client side">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,24 +48,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_SamplesCA06/CA4OOPnialloreillyGD2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000/Database_Client_Server_App&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="JsonAdapter" />
@@ -145,6 +143,8 @@
       <workItem from="1681857534556" duration="7836000" />
       <workItem from="1681899479942" duration="1141000" />
       <workItem from="1681901045339" duration="4491000" />
+      <workItem from="1681905582399" duration="54000" />
+      <workItem from="1681927534134" duration="4906000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -279,7 +279,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681899604243</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Adding the display option to the server and client side">
+      <created>1681905625352</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1681905625352</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -315,7 +322,8 @@
     <MESSAGE value="changes to game for id." />
     <MESSAGE value="changes for deleting a game" />
     <MESSAGE value="uptades to first features." />
-    <option name="LAST_COMMIT_MESSAGE" value="uptades to first features." />
+    <MESSAGE value="Adding the display option to the server and client side" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding the display option to the server and client side" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

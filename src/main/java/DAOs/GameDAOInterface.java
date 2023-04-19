@@ -20,4 +20,7 @@ public interface GameDAOInterface {
 
 
     String AllGamesJSONServer() throws DaoException;
+
+    String findGameByIDJSONServer(int id) throws DaoException;
+
 }
