@@ -115,7 +115,22 @@ public class App { ///start app
 
 
     //todo, ================================================ ADD NEW GAMES ================================================
-    private void addNewGame() {
+    private void addNewGame()  throws DaoException {
+
+        games = IGameDAO.displayAllGames();
+
+        if (games.isEmpty()) {
+            System.out.println("There are no games in the database.");
+        } else {
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+            System.out.println("\n********************************************************************************************************************************");
+            for (Game game : games) {
+                System.out.println(game.displayAllGames());
+            }
+        }
+        System.out.println("********************************************************************************************************************************");
+
 
         Scanner kb = new Scanner(System.in);
 
@@ -217,10 +232,18 @@ public class App { ///start app
             }
         }
 
+        Game game = IGameDAO.addNewGame(title_Game, genre_Game, releaseYear_Game, publisher_Game, price_Game, rate_Game);
 
-        Game game = new Game( title_Game, genre_Game, releaseYear_Game, publisher_Game, price_Game, rate_Game);
-        System.out.println("Game Created: " + game.toString());
-
+        if (game != null) {
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.println(game.displayAllGames());
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.println("Game added successfully");
+        } else {
+            System.out.println("Game not added");
+        }
 
 
 

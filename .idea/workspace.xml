@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="changes to game for id.">
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="changes for deleting a game">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DTOs/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000/Database_Client_Server_App/src/main/java",
+    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_ServerSide_Abiel_Java",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -137,7 +138,7 @@
       <option name="presentableId" value="Default" />
       <updated>1679660495065</updated>
       <workItem from="1681776599970" duration="6199000" />
-      <workItem from="1681857534556" duration="4278000" />
+      <workItem from="1681857534556" duration="7836000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -258,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681860708014</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="changes for deleting a game">
+      <created>1681862158035</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1681862158035</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +300,8 @@
     <MESSAGE value="doing features updates and fixing bugs." />
     <MESSAGE value="doing some updates, and fixing errors" />
     <MESSAGE value="changes to game for id." />
-    <option name="LAST_COMMIT_MESSAGE" value="changes to game for id." />
+    <MESSAGE value="changes for deleting a game" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes for deleting a game" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -15,6 +15,9 @@ public interface GameDAOInterface {
     void deleteGameById(int id)  throws DaoException;
 
 
+    Game addNewGame(String titleGame, String genreGame, int releaseYearGame,
+                    String publisherGame, double priceGame, int rateGame)  throws DaoException;
+
 
 
 

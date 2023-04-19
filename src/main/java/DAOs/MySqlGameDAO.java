@@ -161,4 +161,75 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
     }
 
 
+
+
+
+    @Override
+    public Game addNewGame(String titleGame, String genreGame, int releaseYearGame, String publisherGame,
+                           double priceGame, int rateGame) throws DaoException {
+
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        Game game = null;
+
+        String  name = titleGame;
+        String  genre = genreGame;
+        int     releaseYear = releaseYearGame;
+        String  publisher = publisherGame;
+        double  price = priceGame;
+        int     rate = rateGame;
+
+        try {
+            //Get a connection to the database
+            connection = this.getConnection();
+
+            String query = "INSERT INTO game\n " +
+                    " VALUES (NULL, ?,?,?,?,?,?)";
+
+            preparedStatement = connection.prepareStatement(query);
+
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, genre);
+            preparedStatement.setInt(3, releaseYear);
+            preparedStatement.setString(4, publisher);
+            preparedStatement.setDouble(5, price);
+            preparedStatement.setInt(6, rate);
+
+            preparedStatement.executeUpdate();
+
+            game = new Game (name, genre, releaseYear, publisher, price, rate);
+
+        } catch (SQLException sqe) {
+            throw new DaoException("addNewGame() " + sqe.getMessage());
+        } finally {
+            try {
+
+                if (preparedStatement != null) {
+                    preparedStatement.close();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("addNewGame() " + e.getMessage());
+            }
+        }
+
+
+        return game;
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }
