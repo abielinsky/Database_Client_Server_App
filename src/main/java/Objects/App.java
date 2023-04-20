@@ -133,7 +133,6 @@ public class App { ///start app
 
 
         Scanner kb = new Scanner(System.in);
-
         String title_Game = "";
         boolean valid_Value = false;
 

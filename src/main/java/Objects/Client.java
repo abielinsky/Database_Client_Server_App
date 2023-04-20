@@ -54,9 +54,9 @@ public class Client {
             System.out.println("\n********* MENU ***********");
             System.out.println("|   1.  DISPLAY            |");
             System.out.println("|   2.  DISPLAY by ID      |");
-            System.out.println("|   2.  DELETE             |");
-            System.out.println("|   3.  ADD NEW GAME       |");
-            System.out.println("|   4.  EXIT               |");
+            System.out.println("|   3.  DELETE             |");
+            System.out.println("|   4.  ADD NEW GAME       |");
+            System.out.println("|   5.  EXIT               |");
             System.out.println("****************************\n");
 
                     try {
@@ -107,6 +107,7 @@ public class Client {
                                         game = gsonParser.fromJson(response, Game.class);
                                         //todo, convert the json data to object
 
+
                                         System.out.println("\nConvert and display a game object by ID: "+id+" :\n ");
                                         displayGame(game);
                                         System.out.println("continue.....");
@@ -122,11 +123,57 @@ public class Client {
                                 System.out.println("********************************************************************************************************************************");
                                 System.out.println("====================================================== DELETE GAME BY ID =======================================================");
 
+                                boolean ShowingData;
+                                do{
+                                    socketWriter.println("DISPLAY_ALL_GAMES");
+                                    ShowingData = false;
+                                    String response1 = socketReader.nextLine();
+                                    System.out.println("Client message: Response from server: \"" + "JsonData:"+ "\"");
+                                    System.out.println(response1);
+                                    gameArray = gsonParser.fromJson(response1, Game[].class);
+                                    System.out.println("\nConvert and display the JsonData to objects :\n ");
+                                    Game.displayAllGames(gameArray);
+
+                                }while(ShowingData == true);
+
+
+                                System.out.println("\nPlease Enter GAME ID to delete from the list above");
+                                id = kb.nextLine();
+                                command = "DELETE_GAME_BY_ID";
+
+
+                                if (isIDExist(id)) {
+                                    command = command + " " + id;
+                                    socketWriter.println(command);
+                                    response = socketReader.nextLine();
+                                    System.out.println("Client message: Deleting a game by the ID...");
+                                    System.out.println("Client message: " + response);
+                                } else
+                                    System.out.println("\nINVALID ID, please enter a valid ID\n");
                                 break;
+
 
                             case ADD_NEW_GAME:
                                 System.out.println("********************************************************************************************************************************");
                                 System.out.println("======================================================== INSERT NEW GAME =======================================================");
+
+                                System.out.println("\nClient message: Please enter the game details: ");
+
+                                game = gameFields();
+
+                                if(game !=null){
+                                    System.out.println("Adding a new game to the data base..");
+                                    String gameJson = gsonParser.toJson(game);
+
+                                    socketWriter.println("ADD_NEW_GAME;" + gameJson);
+                                    response = socketReader.nextLine();
+                                    System.out.println("Client message: " + response);
+
+                                }else{
+                                    System.out.println("\nClient message: Invalid GAME fields");
+                                }
+
+
 
                                 break;
 
@@ -152,6 +199,110 @@ public class Client {
 
     }
 
+    private Game gameFields() {
+
+        Scanner kb = new Scanner(System.in);
+        String title_Game = "";
+        boolean valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the title name: ");
+            title_Game = kb.nextLine();
+
+            if (title_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (title_Game.matches(".*\\d.*")){
+                System.out.println("Invalid title name, try again");
+            }
+            else
+            {
+                valid_Value = true;
+            }
+        }
+
+
+        String genre_Game = "";
+        boolean valid_genre_Game = false;
+
+        while (!valid_genre_Game) {
+            System.out.println("Enter the genre name: ");
+            genre_Game = kb.nextLine();
+
+            if (genre_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (genre_Game.matches(".*\\d.*")){
+                System.out.println("Invalid genre name, try again");
+            }
+            else
+            {
+                valid_genre_Game = true;
+            }
+        }
+
+        int releaseYear_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the release year: ");
+            try {
+                releaseYear_Game = Integer.parseInt(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("GAme must be an integer. Please enter a valid number:");
+            }
+        }
+
+        String publisher_Game = " ";
+        boolean valid_publisher_Game = false;
+
+        while (!valid_publisher_Game) {
+            System.out.println("Enter the publisher_Game name Company: ");
+            publisher_Game = kb.nextLine();
+
+            if (publisher_Game.isEmpty()) {
+                System.out.println("Name is empty, try again");
+            }
+            else if (publisher_Game.matches(".*\\d.*")){
+                System.out.println("Invalid genre name, try again");
+            }
+            else
+            {
+                valid_publisher_Game = true;
+            }
+        }
+
+        double price_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the price: ");
+            try {
+                price_Game = Double.parseDouble(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Price must be a valid number. Please enter a valid price:");
+                valid_Value = false;
+            }
+        }
+
+        int rate_Game = 0;
+        valid_Value = false;
+
+        while (!valid_Value) {
+            System.out.println("Enter the rate: ");
+            try {
+                rate_Game = Integer.parseInt(kb.nextLine());
+                valid_Value = true;
+            } catch (NumberFormatException e) {
+                System.out.println("Game must be an integer. Please enter a valid number:");
+            }
+        }
+
+        return new Game(title_Game, genre_Game, releaseYear_Game, publisher_Game, price_Game, rate_Game);
+
+    }
 
 
     private boolean isIDExist(String id) {

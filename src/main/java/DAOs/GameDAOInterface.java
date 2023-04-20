@@ -14,13 +14,17 @@ public interface GameDAOInterface {
 
     void deleteGameById(int id)  throws DaoException;
 
-
     Game addNewGame(String titleGame, String genreGame, int releaseYearGame,
                     String publisherGame, double priceGame, int rateGame)  throws DaoException;
-
 
     String AllGamesJSONServer() throws DaoException;
 
     String findGameByIDJSONServer(int id) throws DaoException;
+
+    void deleteGameByIdServer(int id)  throws DaoException;
+
+    void addNewGameServer(Game game)  throws DaoException;
+
+
 
 }

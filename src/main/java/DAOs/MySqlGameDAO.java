@@ -254,5 +254,78 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
 
     }
 
+    @Override
+    public void deleteGameByIdServer(int id) throws DaoException {
+
+        Connection connection = null;
+        PreparedStatement ps = null;
+
+
+        try {
+            //Get connection object using the methods in the super class (MySqlDao.java)...
+            connection = this.getConnection();
+
+            String query = "DELETE FROM game where id_Game = ?";
+
+            ps = connection.prepareStatement(query);
+            ps.setInt(1, id);
+
+            //Using a PreparedStatement to execute SQL...
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new DaoException("deleteGameByID() " + e.getMessage());
+        } finally {
+            try {
+                if (ps != null) {
+                    ps.close();
+                    System.out.println();
+                }
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("deleteGameByID() " + e.getMessage());
+            }
+        }
+
+
+
+
+    }
+
+    @Override
+    public void addNewGameServer(Game game) throws DaoException {
+
+
+        String query = "INSERT INTO game (title_Game, genre_Game, release_year_Game, " +
+                "publisher_Game, price_Game, rate_Game) VALUES (?,?,?,?,?,?)";
+
+        try (
+            Connection connection = this.getConnection();
+            PreparedStatement ps = connection.prepareStatement(query);
+        ){
+            ps.setString(1, game.getTitle_Game());
+            ps.setString(2, game.getGenre_Game());
+            ps.setInt(3, game.getRelease_year_Game());
+            ps.setString(4, game.getPublisher_Game());
+            ps.setDouble(5, game.getPrice_Game());
+            ps.setDouble(6, game.getRate_Game());
+
+            ps.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new DaoException("addNewGameServer() " + e.getMessage());
+        }
+
+
+    }
+
+
+
+
 
 }
+
+
+

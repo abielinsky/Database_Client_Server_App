@@ -2,6 +2,7 @@ package Objects;
 
 import DAOs.GameDAOInterface;
 import DAOs.MySqlGameDAO;
+import DTOs.Game;
 import Exceptions.DaoException;
 import JsonAdapter.MyCustomTypeAdapter;
 import com.google.gson.Gson;
@@ -103,7 +104,10 @@ public class Server {
                         String allGames = IGameDao.AllGamesJSONServer();
                         System.out.println("Return JSON string of the Games list");
                         socketWriter.println(allGames);
-                    } else if (message.startsWith("DISPLAY_GAME_BY_ID")) {
+                    }
+
+
+                    else if (message.startsWith("DISPLAY_GAME_BY_ID")) {
                         tokens = message.split(" ");
                         try {
                             int id = Integer.parseInt(tokens[1]);
@@ -113,9 +117,43 @@ public class Server {
                         } catch (NumberFormatException e) {
                             System.out.println("Please enter a valid ID");
                         }
-                    } else {
+                    }
+
+
+                    else if (message.startsWith("DELETE_GAME_BY_ID")) {
+
+                        try {
+                            tokens = message.split(" ");
+                            int id = Integer.parseInt(tokens[1]);
+                            if(IGameDao.findGameById(id) !=null) {
+                                IGameDao.deleteGameByIdServer(id);
+                                socketWriter.println("The GAME with the ID "+"\""+ id +"\""+ " has been DELETED");
+                            }
+                            else{
+                                socketWriter.println("game with id " +"\""+id+ "\""+" does not exist, input a valid ID");
+                            }
+                        }
+                        catch( DaoException e )
+                        {
+                            e.printStackTrace();
+                        }
+
+                    }
+
+
+                    else if (message.startsWith("ADD_NEW_GAME")) {
+                        tokens = message.split(";");
+
+                        Game game = gsonParser.fromJson(tokens[1], Game.class);
+                        IGameDao.addNewGameServer(game);
+                        socketWriter.println("Game " +"\""+ game.getTitle_Game() +"\""+ " HAS been added...");
+                    }
+                    else {
                         socketWriter.println("Invalid command.");
                     }
+
+
+
                 }
 
                 socket.close();
