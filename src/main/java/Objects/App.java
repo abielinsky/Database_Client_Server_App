@@ -91,6 +91,8 @@ public class App { ///start app
                     case MENU_FILTERS:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== MENU FILTERS =======================================================");
+                        filterMenu();
+
 
                         break;
 
@@ -112,6 +114,100 @@ public class App { ///start app
 
     } /// finish displayMenuApp
 
+
+
+
+    private void filterMenu() {
+
+        final int filter_by_Title = 1;
+        final int filter_by_Genre = 2;
+        final int filter_by_Year = 3;
+        final int filter_by_Publisher = 4;
+        final int filter_by_Price = 5;
+        final int filter_by_Rate = 6;
+        final int filter_by_All = 7;
+        final int filter_by_Exit = 8;
+        Scanner input = new Scanner(System.in);
+        int option = 0;
+
+        do {
+            System.out.println("\n\n");
+            System.out.println("____________________ MENU ________________");
+            System.out.println("||   1.   FILTER BY TITLE        ==>    ||");
+            System.out.println("||   2.   FILTER BY GENRE        ==>    ||");
+            System.out.println("||   3.   FILTER BY YEAR         ==>    ||");
+            System.out.println("||   4.   FILTER BY PUBLISHER    ==>    ||");
+            System.out.println("||   5.   FILTER BY PRICE        ==>    ||");
+            System.out.println("||   6.   FILTER BY RATE         ==>    ||");
+            System.out.println("||   7.   FILTER BY ALL          ==>    ||");
+            System.out.println("||   8.   EXIT                   ==>    ||");
+            System.out.println("******************************************");
+            System.out.println("    Option [1 - 8]");
+
+            try {
+
+                String usersInput = input.nextLine();
+                option = Integer.parseInt(usersInput);
+                switch (option) {
+
+                    case filter_by_Title:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY TITLE =======================================================");
+                        //    filterByTitle();
+                        break;
+
+                    case filter_by_Genre:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY GENRE =======================================================");
+                        //   filterByGenre();
+                        break;
+
+                    case filter_by_Year:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY YEAR =======================================================");
+                        //   filterByYear();
+                        break;
+
+                    case filter_by_Publisher:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY PUBLISHER =======================================================");
+                        //   filterByPublisher();
+                        break;
+
+                    case filter_by_Price:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY PRICE =======================================================");
+                        //   filterByPrice();
+                        break;
+
+                    case filter_by_Rate:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY RATE =======================================================");
+                        //   filterByRate();
+                        break;
+
+                    case filter_by_All:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY ALL =======================================================");
+                        //  filterByAll();
+                        break;
+
+                    case filter_by_Exit:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== EXIT =======================================================");
+                        break;
+
+                    default:
+                        System.out.println("XXXXXXXXXXXXXXXXXX '  Please, select a valid option. ' XXXXXXXXXXXXXXXXXX");
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                System.out.println(" INVALID OPTION ") ;
+            }
+
+
+        } while (option != filter_by_Exit);
+    }
 
 
     //todo, ================================================ ADD NEW GAMES ================================================
