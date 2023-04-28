@@ -1,13 +1,11 @@
 package Objects;
 
 
-import Comparators.ComparatorGameGenre;
-import Comparators.ComparatorGamePublisher;
-import Comparators.ComparatorGameTitle;
-import Comparators.ComparatorGameYear;
+import Comparators.*;
 import DAOs.GameDAOInterface;
 import DAOs.MySqlGameDAO;
 import DTOs.Game;
+import Enumerators.SortType;
 import Exceptions.DaoException;
 
 import java.io.IOException;
@@ -125,10 +123,11 @@ public class App { ///start app
         final int filter_by_Genre = 2;
         final int filter_by_Year = 3;
         final int filter_by_Publisher = 4;
-        final int filter_by_Price = 5;
-        final int filter_by_Rate = 6;
-        final int filter_by_All = 7;
-        final int filter_by_Exit = 8;
+        final int filter_by_Price_Ascending = 5;
+        final int filter_by_Price_Descending= 6;
+        final int filter_by_Rate = 7;
+        final int filter_by_All = 8;
+        final int filter_by_Exit = 9;
         Scanner input = new Scanner(System.in);
         int option = 0;
 
@@ -139,10 +138,11 @@ public class App { ///start app
             System.out.println("||   2.   FILTER BY GENRE        ==>    ||");
             System.out.println("||   3.   FILTER BY YEAR         ==>    ||");
             System.out.println("||   4.   FILTER BY PUBLISHER    ==>    ||");
-            System.out.println("||   5.   FILTER BY PRICE        ==>    ||");
-            System.out.println("||   6.   FILTER BY RATE         ==>    ||");
-            System.out.println("||   7.   FILTER BY ALL          ==>    ||");
-            System.out.println("||   8.   EXIT                   ==>    ||");
+            System.out.println("||   5.   FILTER BY PRICE ASC    ==>    ||");
+            System.out.println("||   6.   FILTER BY PRICE DESC   ==>    ||");
+            System.out.println("||   7.   FILTER BY RATE         ==>    ||");
+            System.out.println("||   8.   FILTER BY ALL          ==>    ||");
+            System.out.println("||   9.   EXIT                   ==>    ||");
             System.out.println("******************************************");
             System.out.println("    Option [1 - 8]");
 
@@ -206,10 +206,26 @@ public class App { ///start app
 
                         break;
 
-                    case filter_by_Price:
+                    case filter_by_Price_Ascending:
                         System.out.println("********************************************************************************************************************************");
-                        System.out.println("======================================================== FILTER BY PRICE =======================================================");
-                        //   filterByPrice();
+                        System.out.println("======================================================== FILTER BY PRICE ASCENDING =======================================================");
+
+                        games = IGameDAO.filterAllGamesByPrice();
+                        ComparatorGamePriceAsc priceComparatorAsc = new ComparatorGamePriceAsc(SortType.Ascending);
+                        Collections.sort(games, priceComparatorAsc);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
+                        break;
+
+                    case filter_by_Price_Descending:
+                        System.out.println("********************************************************************************************************************************");
+                        System.out.println("======================================================== FILTER BY PRICE DESCENDING =======================================================");
+
+                        games = IGameDAO.filterAllGamesByPriceDescending();
+                        ComparatorGamePriceDesc priceComparatorDesc = new ComparatorGamePriceDesc(SortType.Descending);
+                        Collections.sort(games, priceComparatorDesc);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
                     case filter_by_Rate:

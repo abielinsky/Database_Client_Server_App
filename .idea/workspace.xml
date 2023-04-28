@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding filter by year and by genre" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding filter by year and by genre, title">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Comparators/ComparatorGamePriceAsc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Comparators/ComparatorGamePriceDesc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Enumerators/SortType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -64,6 +72,7 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="Comparators" />
+      <recent name="Enumerators" />
       <recent name="JsonAdapter" />
       <recent name="com.dkit.abielLopez.SDA.client" />
     </key>
@@ -145,7 +154,7 @@
       <workItem from="1682324627151" duration="607000" />
       <workItem from="1682364369977" duration="3857000" />
       <workItem from="1682608533162" duration="2524000" />
-      <workItem from="1682712526974" duration="5370000" />
+      <workItem from="1682712526974" duration="7784000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -315,7 +324,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682720159798</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="adding filter by year and by genre, title">
+      <created>1682720488583</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1682720488583</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +373,8 @@
     <MESSAGE value="adding menu for filter options..." />
     <MESSAGE value="adding filter for game name title.." />
     <MESSAGE value="adding filter by year and by genre" />
-    <option name="LAST_COMMIT_MESSAGE" value="adding filter by year and by genre" />
+    <MESSAGE value="adding filter by year and by genre, title" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding filter by year and by genre, title" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
