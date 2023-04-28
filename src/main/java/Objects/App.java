@@ -2,6 +2,7 @@ package Objects;
 
 
 import Comparators.ComparatorGameGenre;
+import Comparators.ComparatorGamePublisher;
 import Comparators.ComparatorGameTitle;
 import Comparators.ComparatorGameYear;
 import DAOs.GameDAOInterface;
@@ -189,13 +190,20 @@ public class App { ///start app
 
                         games = IGameDAO.filterAllGamesByYear();
                         ComparatorGameYear yearComparator = new ComparatorGameYear();
+                        Collections.sort(games, yearComparator);
+                        displayAllGamesFilter((ArrayList<Game>) games);
 
                         break;
 
                     case filter_by_Publisher:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== FILTER BY PUBLISHER =======================================================");
-                        //   filterByPublisher();
+
+                        games = IGameDAO.filterAllGamesByPublisher();
+                        ComparatorGamePublisher publisherComparator = new ComparatorGamePublisher();
+                        Collections.sort(games, publisherComparator);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
                     case filter_by_Price:
