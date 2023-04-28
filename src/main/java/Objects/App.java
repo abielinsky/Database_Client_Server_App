@@ -125,9 +125,9 @@ public class App { ///start app
         final int filter_by_Publisher = 4;
         final int filter_by_Price_Ascending = 5;
         final int filter_by_Price_Descending= 6;
-        final int filter_by_Rate = 7;
-        final int filter_by_All = 8;
-        final int filter_by_Exit = 9;
+        final int filter_by_Rate_Ascending = 7;
+        final int filter_by_Rate_Descending = 8;
+        final int Exit = 9;
         Scanner input = new Scanner(System.in);
         int option = 0;
 
@@ -140,9 +140,9 @@ public class App { ///start app
             System.out.println("||   4.   FILTER BY PUBLISHER    ==>    ||");
             System.out.println("||   5.   FILTER BY PRICE ASC    ==>    ||");
             System.out.println("||   6.   FILTER BY PRICE DESC   ==>    ||");
-            System.out.println("||   7.   FILTER BY RATE         ==>    ||");
-            System.out.println("||   8.   FILTER BY ALL          ==>    ||");
-            System.out.println("||   9.   EXIT                   ==>    ||");
+            System.out.println("||   7.   FILTER BY RATE ASC     ==>    ||");
+            System.out.println("||   8.   FILTER BY RATE DESC     ==>    ||");
+            System.out.println("||   9. <-MENU PRINCIPAL         ==>    ||");
             System.out.println("******************************************");
             System.out.println("    Option [1 - 8]");
 
@@ -228,19 +228,31 @@ public class App { ///start app
 
                         break;
 
-                    case filter_by_Rate:
+                    case filter_by_Rate_Ascending:
                         System.out.println("********************************************************************************************************************************");
-                        System.out.println("======================================================== FILTER BY RATE =======================================================");
-                        //   filterByRate();
+                        System.out.println("======================================================== FILTER BY RATE ASCENDING =======================================================");
+
+                        games = IGameDAO.filterAllGamesByRate();
+                        ComparatorGameRateAsc rateComparatorAsc = new ComparatorGameRateAsc(SortType.Ascending);
+                        Collections.sort(games, rateComparatorAsc);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
-                    case filter_by_All:
+                    case filter_by_Rate_Descending:
                         System.out.println("********************************************************************************************************************************");
-                        System.out.println("======================================================== FILTER BY ALL =======================================================");
-                        //  filterByAll();
+                        System.out.println("======================================================== FILTER BY RATE ASCENDING =======================================================");
+
+                        games = IGameDAO.filterAllGamesByRate();
+                        ComparatorGameRateDesc rateComparatorDesc = new ComparatorGameRateDesc(SortType.Descending);
+                        Collections.sort(games, rateComparatorDesc);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
-                    case filter_by_Exit:
+
+
+                    case Exit:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== EXIT =======================================================");
                         break;
@@ -256,7 +268,7 @@ public class App { ///start app
             }
 
 
-        } while (option != filter_by_Exit);
+        } while (option != Exit);
     }
 
 

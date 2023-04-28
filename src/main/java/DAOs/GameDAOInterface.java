@@ -39,4 +39,6 @@ public interface GameDAOInterface {
     List<Game> filterAllGamesByPrice() throws DaoException;
 
     List<Game> filterAllGamesByPriceDescending() throws DaoException;
+
+    List<Game> filterAllGamesByRate() throws DaoException;
 }

@@ -713,6 +713,61 @@ public class MySqlGameDAO extends MySqlDAO implements GameDAOInterface {
         return gameList;
     }
 
+    @Override
+    public List<Game> filterAllGamesByRate() throws DaoException {
+        Connection connection = null;
+        PreparedStatement ps = null;
+        ResultSet resultSet = null;
+        List<Game> gameList = new ArrayList<>();
+
+        try{
+            //get connection object using the methods in the super class (MySqlDao.java)
+            connection = this.getConnection();
+
+            //String query
+            String query = "SELECT * FROM game";
+            ps = connection.prepareStatement(query);
+
+            //using a prepared statement to execute SQL
+            resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id_Game");
+                String title = resultSet.getString("title_Game");
+                String genre = resultSet.getString("genre_Game");
+                int releaseYear = resultSet.getInt("release_year_Game");
+                String publisher = resultSet.getString("publisher_Game");
+                double price = resultSet.getDouble("price_Game");
+                int rate = resultSet.getInt("rate_Game");
+
+                Game game = new Game(id, title, genre, releaseYear, publisher, price, rate);
+                gameList.add(game);
+            }
+
+        } catch (SQLException e) {
+            throw new DaoException("filterAllGamesByRateAscending " + e.getMessage());
+        }
+
+        finally {
+            try {
+                if (resultSet != null) {
+                    resultSet.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+
+                if (connection != null) {
+                    freeConnection(connection);
+                }
+            } catch (SQLException e) {
+                throw new DaoException("findAllGames() " + e.getMessage());
+            }
+        }
+
+
+        return gameList;
+    }
+
 
 }
 
