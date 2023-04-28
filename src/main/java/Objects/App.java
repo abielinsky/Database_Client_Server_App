@@ -1,15 +1,16 @@
 package Objects;
 
 
+import Comparators.ComparatorGameGenre;
+import Comparators.ComparatorGameTitle;
+import Comparators.ComparatorGameYear;
 import DAOs.GameDAOInterface;
 import DAOs.MySqlGameDAO;
 import DTOs.Game;
 import Exceptions.DaoException;
 
 import java.io.IOException;
-import java.util.InputMismatchException;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class App { ///start app
 
@@ -148,24 +149,47 @@ public class App { ///start app
 
                 String usersInput = input.nextLine();
                 option = Integer.parseInt(usersInput);
+
+
+                //call the gameDAO method to find all games
+
+                games = IGameDAO.findAllGames();
+
+                if (games.isEmpty()) {
+                    System.out.println("There are no games in the database");
+                }
+
                 switch (option) {
 
                     case filter_by_Title:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== FILTER BY TITLE =======================================================");
-                        //    filterByTitle();
+
+                        games = IGameDAO.filterAllGamesByTitle();
+                        ComparatorGameTitle titleComparator = new ComparatorGameTitle();
+                        Collections.sort(games, titleComparator);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
                     case filter_by_Genre:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== FILTER BY GENRE =======================================================");
-                        //   filterByGenre();
+
+                        games = IGameDAO.filterAllGamesByGenre();
+                        ComparatorGameGenre genreComparator = new ComparatorGameGenre();
+                        Collections.sort(games, genreComparator);
+                        displayAllGamesFilter((ArrayList<Game>) games);
+
                         break;
 
                     case filter_by_Year:
                         System.out.println("********************************************************************************************************************************");
                         System.out.println("======================================================== FILTER BY YEAR =======================================================");
-                        //   filterByYear();
+
+                        games = IGameDAO.filterAllGamesByYear();
+                        ComparatorGameYear yearComparator = new ComparatorGameYear();
+
                         break;
 
                     case filter_by_Publisher:
@@ -203,6 +227,8 @@ public class App { ///start app
                 }
             } catch (NumberFormatException e) {
                 System.out.println(" INVALID OPTION ") ;
+            } catch (DaoException e) {
+                throw new RuntimeException(e);
             }
 
 
@@ -210,6 +236,39 @@ public class App { ///start app
     }
 
 
+
+
+    //todo ================================================== displayAllGamesFilter =================================================
+    //todo ================================================== displayAllGamesFilter =================================================
+    private void displayAllGamesFilter(ArrayList<Game> games) {
+
+        if (games.isEmpty()) {
+            System.out.println("There are no games in the database.");
+        } else {
+            System.out.println("\n********************************************************************************************************************************");
+            System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", "Id", "Name", "Genre", "Release Year", "Publisher Company", "Price", "Rate","*");
+            System.out.println("\n********************************************************************************************************************************");
+//            for (Game game : games) {
+//                System.out.printf("%s %-5s %-22s %-25s %-15s %-30s %-10s %-12s %s","*", game.getGame_ID(), game.getTitle_Game(), game.getGenre_Game(), game.getRelease_year_Game(), game.getPublisher_Game(), game.getPrice_Game(), game.getRate_Game(),"*");
+//            }
+
+            for (Game game : games) {
+                System.out.println(game.displayAllGames());
+            }
+
+        }
+        System.out.println("********************************************************************************************************************************");
+
+
+    }
+
+
+
+
+
+
+
+    //todo, ========================================================================================================================
     //todo, ================================================ ADD NEW GAMES ================================================
     private void addNewGame()  throws DaoException {
 

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="Adding the DELETE AND add new options to the server and client side..">
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding menu for filter options...">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Comparators/ComparatorGameTitle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,11 +53,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000_CA'S/000_SamplesCA06/CA5theo",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000/Database_Client_Server_App",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -65,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="Comparators" />
       <recent name="JsonAdapter" />
       <recent name="com.dkit.abielLopez.SDA.client" />
     </key>
@@ -145,6 +150,8 @@
       <workItem from="1682008712786" duration="71000" />
       <workItem from="1682324627151" duration="607000" />
       <workItem from="1682364369977" duration="3857000" />
+      <workItem from="1682608533162" duration="2524000" />
+      <workItem from="1682712526974" duration="4830000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -300,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681949880368</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="adding menu for filter options...">
+      <created>1682608612362</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1682608612362</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +353,8 @@
     <MESSAGE value="Adding the display option to the server and client side" />
     <MESSAGE value="Adding the display option by Id to the server and client side" />
     <MESSAGE value="Adding the DELETE AND add new options to the server and client side.." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding the DELETE AND add new options to the server and client side.." />
+    <MESSAGE value="adding menu for filter options..." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding menu for filter options..." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

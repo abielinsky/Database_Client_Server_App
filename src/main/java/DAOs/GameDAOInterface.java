@@ -25,6 +25,12 @@ public interface GameDAOInterface {
 
     void addNewGameServer(Game game)  throws DaoException;
 
+    public List<Game> findAllGames() throws DaoException;
+
+    List<Game> filterAllGamesByTitle() throws DaoException;
 
 
+    List<Game> filterAllGamesByGenre() throws DaoException;
+
+    List<Game> filterAllGamesByYear() throws DaoException;
 }
