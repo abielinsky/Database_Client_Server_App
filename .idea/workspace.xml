@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding filter for price in ascending and descending way.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Comparators/ComparatorGameRateAsc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Comparators/ComparatorGameRateDesc.java" afterDir="false" />
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding filter for rate in descending and ascending order.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/AppTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/MySqlGameDAOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/GameDAOInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Objects/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Objects/App.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -40,7 +40,7 @@
     </option>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2NSbadNZuSCmpJTtN68Igf4kcng" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -54,6 +54,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "E:/00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT/13 - OBJECT ORIENTED PROGRAMMING/000/Database_Client_Server_App",
     "node.js.detected.package.eslint": "true",
@@ -80,6 +82,15 @@
       <recent name="E:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_ServerSide_Abiel_Java\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
       <recent name="F:\00 - COLLEGE DKI -- SOFTWARE DEVELOPMENT\13 - OBJECT ORIENTED PROGRAMMING\000_CA'S\000_CA_06\Database_Client_Server_App\src\main\java\com.dkit.abielLopez.SDA" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Objects" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.dkit.abielLopez.SDA.exceptions" />
       <recent name="com.dkit.abielLopez.SDA.dao.storedao" />
@@ -87,51 +98,63 @@
       <recent name="com.dkit.abielLopez.SDA.part1and2app" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Objects.App" />
+  <component name="RunManager" selected="JUnit.MySqlGameDAOTest.testDeleteGame">
+    <configuration name="MySqlGameDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Server_Client_SQL" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dkit.abielLopez.SDA.AppObjects.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Objects.Client" />
+    <configuration name="MySqlGameDAOTest.displayAllGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Server_Client_SQL" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dkit.abielLopez.SDA.client.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="METHOD_NAME" value="displayAllGames" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Objects.Server" />
+    <configuration name="MySqlGameDAOTest.testAddGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Server_Client_SQL" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dkit.abielLopez.SDA.server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="METHOD_NAME" value="testAddGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlGameDAOTest.testDeleteGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Server_Client_SQL" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="METHOD_NAME" value="testDeleteGame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MySqlGameDAOTest.testSingleGame" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Server_Client_SQL" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="METHOD_NAME" value="testSingleGame" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Application.Server" />
+        <item itemvalue="JUnit.MySqlGameDAOTest.testDeleteGame" />
+        <item itemvalue="JUnit.MySqlGameDAOTest.testAddGame" />
+        <item itemvalue="JUnit.MySqlGameDAOTest.testSingleGame" />
+        <item itemvalue="JUnit.MySqlGameDAOTest.displayAllGames" />
+        <item itemvalue="JUnit.MySqlGameDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +176,7 @@
       <workItem from="1682324627151" duration="607000" />
       <workItem from="1682364369977" duration="3857000" />
       <workItem from="1682608533162" duration="2524000" />
-      <workItem from="1682712526974" duration="8699000" />
+      <workItem from="1682712526974" duration="19688000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -337,7 +360,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682722798670</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="adding filter for rate in descending and ascending order.">
+      <created>1682723631988</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1682723631988</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -355,7 +385,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="getting starter" />
     <MESSAGE value="some changes to the sql database." />
     <MESSAGE value="Coding client side and code for connections." />
     <MESSAGE value="Coding client side and code for connections. and menu for the game table options." />
@@ -380,7 +409,8 @@
     <MESSAGE value="adding filter by year and by genre" />
     <MESSAGE value="adding filter by year and by genre, title" />
     <MESSAGE value="adding filter for price in ascending and descending way." />
-    <option name="LAST_COMMIT_MESSAGE" value="adding filter for price in ascending and descending way." />
+    <MESSAGE value="adding filter for rate in descending and ascending order." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding filter for rate in descending and ascending order." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -391,5 +421,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Database_Client_Server_App$AppTest_findGameById.ic" NAME="AppTest.findGameById Coverage Results" MODIFIED="1682810011248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Objects.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Database_Client_Server_App$AppTest.ic" NAME="AppTest Coverage Results" MODIFIED="1682811657242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>
