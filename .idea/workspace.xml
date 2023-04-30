@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="adding filter for rate in descending and ascending order.">
-      <change afterPath="$PROJECT_DIR$/src/test/java/AppTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/MySqlGameDAOTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAOs/MySqlGameDAO.java" afterDir="false" />
-    </list>
+    <list default="true" id="3b50af4a-87c1-486d-b8ac-8fbb59cad060" name="Changes" comment="Completing testings." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -98,22 +92,12 @@
       <recent name="com.dkit.abielLopez.SDA.part1and2app" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MySqlGameDAOTest.testDeleteGame">
+  <component name="RunManager" selected="JUnit.MySqlGameDAOTest">
     <configuration name="MySqlGameDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Server_Client_SQL" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MySqlGameDAOTest.displayAllGames" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Server_Client_SQL" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
-      <option name="METHOD_NAME" value="displayAllGames" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,13 +132,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MySqlGameDAOTest.testSingleGameTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Server_Client_SQL" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MySqlGameDAOTest" />
+      <option name="METHOD_NAME" value="testSingleGameTwo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.MySqlGameDAOTest" />
+        <item itemvalue="JUnit.MySqlGameDAOTest.testSingleGameTwo" />
         <item itemvalue="JUnit.MySqlGameDAOTest.testDeleteGame" />
         <item itemvalue="JUnit.MySqlGameDAOTest.testAddGame" />
         <item itemvalue="JUnit.MySqlGameDAOTest.testSingleGame" />
-        <item itemvalue="JUnit.MySqlGameDAOTest.displayAllGames" />
-        <item itemvalue="JUnit.MySqlGameDAOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +170,7 @@
       <workItem from="1682324627151" duration="607000" />
       <workItem from="1682364369977" duration="3857000" />
       <workItem from="1682608533162" duration="2524000" />
-      <workItem from="1682712526974" duration="19688000" />
+      <workItem from="1682712526974" duration="20001000" />
     </task>
     <task id="LOCAL-00001" summary="main starter for the Project">
       <created>1679660545985</created>
@@ -367,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682723631988</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Completing testings.">
+      <created>1682858454455</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1682858454455</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,7 +386,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="some changes to the sql database." />
     <MESSAGE value="Coding client side and code for connections." />
     <MESSAGE value="Coding client side and code for connections. and menu for the game table options." />
     <MESSAGE value="Coding client side" />
@@ -410,7 +410,8 @@
     <MESSAGE value="adding filter by year and by genre, title" />
     <MESSAGE value="adding filter for price in ascending and descending way." />
     <MESSAGE value="adding filter for rate in descending and ascending order." />
-    <option name="LAST_COMMIT_MESSAGE" value="adding filter for rate in descending and ascending order." />
+    <MESSAGE value="Completing testings." />
+    <option name="LAST_COMMIT_MESSAGE" value="Completing testings." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -33,6 +33,25 @@ class MySqlGameDAOTest {
 
 
         @Test
+        void testSingleGameTwo() throws DaoException {
+                // Initialize the DAO object
+                MySqlGameDAO dao = new MySqlGameDAO();
+
+                // Get a single game from the database by ID
+                Game game = dao.findGameById(5);
+
+                // Check that the game returned matches the expected values
+                assertEquals(game.getGame_ID(), 5);
+                assertEquals(game.getTitle_Game(), "Half-Life 2");
+                assertEquals(game.getGenre_Game(), "First-person shooter");
+                assertEquals(game.getRelease_year_Game(), 2004);
+                assertEquals(game.getPublisher_Game(), "Valve Corporation");
+                assertEquals(game.getPrice_Game(), 9.99);
+                assertEquals(game.getRate_Game(), 9.0);
+        }
+
+
+        @Test
         void testDeleteGame() throws DaoException {
                 // Initialize the DAO object
                 MySqlGameDAO dao = new MySqlGameDAO();
